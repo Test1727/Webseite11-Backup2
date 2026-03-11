@@ -911,5 +911,20 @@ footer p {
         margin-right: 10px;
     }
 }
+/* ERZWUNGENER ABSTAND VOR INTERESSEN - GARANTIERT */
+.about-details > div:last-child,
+.about-details .detail-item:last-child {
+    margin-top: 10rem !important;
+    padding-top: 2rem !important;
+}
+
+/* Zusätzliche Sicherheit für den Container */
+.about-details > div:last-child > ul,
+.about-details .detail-item:last-child > ul {
+    margin-top: 2rem !important;
+}
+
+
+
 
 
