@@ -1129,13 +1129,13 @@ footer p {
 
 /* Sanftes Scrollen mit Ausgleich */
 html {
-    scroll-padding-top: 35px;  /* Passt den Scroll-Zielpunkt an */
+    scroll-padding-top: 30px;  /* Passt den Scroll-Zielpunkt an */
     scroll-behavior: smooth;     /* Sanftes Scrollen bleibt erhalten */
 }
 
 /* Alternative Absicherung über :target für ältere Browser */
 :target {
-    scroll-margin-top:35px;
+    scroll-margin-top:30px;
 }
 
 
