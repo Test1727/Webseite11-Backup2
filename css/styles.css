@@ -290,16 +290,12 @@ section {
 }
 
 
-
-
-
-
 .hero-brain {
     position: absolute;
-    top: -100px;  /* Negativer Wert schiebt nach oben */
-    left: -50%; /* Nach links erweitern */
-    right: -80%;       /* Nach rechts erweitern */
-    width: auto;         /* Automatisch */
+    top: -100px;
+    left: -50%;
+    /* right: -80%;  <- AUSKOMMENTIEREN ODER LÖSCHEN */
+    width: auto;
     height: 150%;
     transform: rotate(-90deg);
     object-fit: cover;
@@ -310,17 +306,19 @@ section {
 
 .hero-brain2 {
     position: absolute;
-    top: -100px;  /* Gleicher top-Wert */
-    right: -50%;  /* Statt left: -50% */
-    left: auto;   /* left zurücksetzen */
+    top: -100px;
+    right: -50%;  /* Jetzt frei, weil left nicht mehr blockiert */
     width: auto;
     height: 150%;
-    transform: rotate(-90deg);  /* Gleiche Drehung */
+    transform: rotate(-90deg);
     object-fit: cover;
     opacity: 0.3;
     z-index: 1;
     pointer-events: none;
 }
+
+
+
 
 
 
