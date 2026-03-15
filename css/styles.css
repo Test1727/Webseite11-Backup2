@@ -310,7 +310,6 @@ section {
     right: -30%; /* Jetzt frei, weil left nicht mehr blockiert */
     width: auto;
     height: 150%;
-    transform: rotate(-90deg);
     object-fit: cover;
     opacity: 0.3;
     z-index: 1;
