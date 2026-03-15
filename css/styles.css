@@ -184,7 +184,7 @@ header .container {
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: #00ffff;
     font-family: var(--font-primary);
 }
 
@@ -197,7 +197,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: var(--primary-color);
+    color: #00ffff;
     font-weight: 500;
     transition: color 0.3s ease;
 }
