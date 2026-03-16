@@ -1,204 +1,165 @@
-/* mobile.css - NUR MOBILE, KEIN TABLET! */
-
-/* Smartphone (bis 768px) */
+/* Smartphone (bis 768px) - EINMALIG */
 @media (max-width: 768px) {
-    /* === HERO SECTION === */
-    .hero-content {
-        margin-top: -60px !important;
-    }
-    
     .hero-content h1 {
-        font-size: 2.5rem;
-        margin-bottom: 0.2rem;
+        font-size: 2.8rem;
     }
-    
     .hero-content h2 {
-        font-size: 1.3rem;
-        margin-bottom: 1rem;
+        font-size: 1.5rem;
     }
     
     .profile-image {
-        width: 200px !important;
-        height: 200px !important;
-        margin-top: -30px !important;
-        margin-bottom: 10px;
-        border-width: 3px;
+        width: 180px !important;
+        height: 180px !important;
+        margin-top: 0;
     }
     
     .hero-image {
-        margin-top: 0;
-        margin-bottom: 10px;
-    }
-    
-    .hero .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        padding-top: 60px;
-        padding-bottom: 40px;
-    }
-    
-    .hero {
-        padding-top: 0 !important;
-        min-height: 100vh;
-        height: auto;
-        display: flex;
-        align-items: center;
+        margin-top: 1rem;
     }
     
     .hero-buttons {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        gap: 15px;
-        justify-content: center;
+        margin-top: 40px;
+        margin-bottom: 30px;
     }
     
     .hero-buttons .btn {
-        min-width: 140px;
-        padding: 10px 15px;
-        font-size: 1rem;
+        min-width: 150px;
+        padding: 10px 20px;
     }
     
-    .hero-brain {
-        height: 250% !important;
-        min-width: 250% !important;
-        bottom: -5% !important;
-        left: -80% !important;
-        transform: rotate(-90deg) scale(1.2) !important;
-        opacity: 0.2;
+    /* ZUSAMMENGEFÜHRT: Hero Definitionen */
+    .hero {
+        padding-top: 400px !important;
+        min-height: 100vh;
+        overflow: hidden;
     }
-    
-    /* === HEADER === */
-    header {
-        padding: 0.2rem 0 !important;
-        min-height: 50px !important;
-    }
-    
-    .logo {
-        font-size: 1.2rem !important;
-        margin: 2px 0 !important;
-        line-height: 1.2 !important;
-    }
-    
-    nav ul {
-        margin: 2px 0 !important;
-        gap: 5px !important;
-    }
-    
-    nav ul li {
-        margin: 0 5px !important;
-    }
-    
-    nav ul li a {
-        font-size: 0.8rem !important;
-        padding: 2px 0 !important;
-    }
-    
-    .header .container {
-        padding-top: 2px !important;
-        padding-bottom: 2px !important;
-        gap: 2px !important;
-    }
-    
-    .header-right {
-        margin: 2px auto !important;
-        gap: 5px !important;
-    }
-    
-    .header-right .language-selector select,
-    .header-right .resume-btn {
-        height: 36px !important;
-        min-height: 36px !important;
-        max-height: 36px !important;
-        line-height: 32px !important;
-        font-size: 0.8rem !important;
-    }
-    
-    /* === ALLGEMEINE LAYOUTS === */
+
     section {
         padding: 60px 0;
         scroll-margin-top: 100px;
     }
-    
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    /* Timeline */
-    .timeline::after {
-        left: 20px;
-    }
-    
-    .timeline-item {
-        width: 100%;
-        padding-left: 50px;
-        padding-right: 10px;
-    }
-    
-    .timeline-item:nth-child(odd), 
-    .timeline-item:nth-child(even) {
-        left: 0;
-    }
-    
-    .timeline-item::after {
-        left: 10px;
-    }
-    
-    .timeline-date {
-        position: relative;
-        top: auto;
-        width: auto;
-        text-align: left;
-        margin-bottom: 10px;
-        right: auto !important;
-        left: auto !important;
-    }
-}
+        
 
-/* Kleine Smartphones (bis 480px) */
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 2rem;
-    }
     
-    .hero-content h2 {
-        font-size: 1.1rem;
-    }
-    
-    .profile-image {
-        width: 150px !important;
-        height: 150px !important;
+    .hero-content {
         margin-top: -20px !important;
     }
+
+    .hero-brain {
+        height: 300% !important;
+        min-width: 300% !important;
+        width: auto !important;
+        top: auto !important;
+        bottom: -10% !important;
+        left: -100% !important;
+        right: auto !important;
+        transform: rotate(-90deg) scale(1.5) !important;
+        object-fit: cover;
+        object-position: center bottom;
+        opacity: 0.3;
+    }
     
-    .hero-buttons {
+    
+
+    .header .container {
+        display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 10px;
+        width: 100%;
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
     }
-    
-    .hero-buttons .btn {
-        width: 200px;
-    }
-    
-    .logo {
-        font-size: 1rem !important;
-    }
-    
-    nav ul li a {
-        font-size: 0.7rem !important;
+
+    /* Header Right Bereich */
+    .header-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 10px auto;
+        height: auto;
+        width: auto;
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     
     .header-right .language-selector select,
     .header-right .resume-btn {
-        height: 32px !important;
-        min-height: 32px !important;
-        font-size: 0.7rem !important;
+        height: 44px !important;
+        min-height: 44px !important;
+        max-height: 44px !important;
+        line-height: 40px !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        margin: 0 !important;
+        font-size: 0.9rem;
+        box-sizing: border-box !important;
+    }
+    
+    .header-right .language-selector select {
+        -webkit-appearance: none;
+        appearance: none;
+        padding-right: 30px;
+    }
+    
+    .header-right .resume-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    }
+
+
+
+    /* Header gesamte Höhe reduzieren */
+    header {
+        padding: 0.2rem 0 !important;     /* Weniger Padding */
+        min-height: 50px !important;      /* Kleinere Mindesthöhe */
+    }
+    
+    /* Logo kleiner und weniger Abstand */
+    .logo {
+        font-size: 1.2rem !important;      /* Kleinere Schrift */
+        margin: 2px 0 !important;          /* Weniger Abstand */
+        line-height: 1.2 !important;       /* Kleinere Zeilenhöhe */
+    }
+    
+    /* Navigation kompakter */
+    nav ul {
+        margin: 2px 0 !important;          /* Weniger Abstand */
+        gap: 5px !important;               /* Kleinere Lücken */
+    }
+    
+    nav ul li {
+        margin: 0 5px !important;          /* Weniger Abstand */
+    }
+    
+    nav ul li a {
+        font-size: 0.8rem !important;      /* Kleinere Schrift */
+        padding: 2px 0 !important;         /* Weniger Innenabstand */
+    }
+    
+    /* Header Container */
+    .header .container {
+        padding-top: 2px !important;
+        padding-bottom: 2px !important;
+        gap: 2px !important;                /* Abstand zwischen Elementen */
+    }
+    
+    /* Header Right Bereich */
+    .header-right {
+        margin: 2px auto !important;        /* Weniger Außenabstand */
+        gap: 5px !important;                /* Kleinere Lücke zwischen Buttons */
+    }
+    
+    /* Sprachselector und Button etwas kleiner */
+    .header-right .language-selector select,
+    .header-right .resume-btn {
+        height: 36px !important;            /* Von 44px auf 36px */
+        min-height: 36px !important;
+        max-height: 36px !important;
+        line-height: 32px !important;       /* Angepasst */
+        font-size: 0.8rem !important;       /* Kleinere Schrift */
     }
 }
