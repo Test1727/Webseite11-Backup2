@@ -647,6 +647,8 @@ section {
     /* Noch kleinerer Abstand zwischen den Buttons */
     .header-right {
         gap: 5px;
+        padding-left: 5px;   /* HIER einfügen */
+        padding-right: 5px;  /* HIER einfügen */
     }
 }
 
