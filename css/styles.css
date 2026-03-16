@@ -323,6 +323,7 @@ main {
 /* Alle Sektionen */
 section {
     padding: 60px 0;
+    scroll-margin-top: 100px;
 }
 
 
@@ -1007,6 +1008,7 @@ section {
     position: relative;
     overflow: hidden;
     padding: 60px 0;
+     padding-bottom: 0 !important;  /* Unteren Padding entfernen */
 }
 
 /* Erste Form - kaum wahrnehmbar (wie About) */
@@ -1049,7 +1051,7 @@ footer {
     color: var(--light-text-color);
     text-align: center;
     padding: 2rem 0;
-    margin-top: 40px;
+    margin-top: 0;
 }
 
 footer p {
