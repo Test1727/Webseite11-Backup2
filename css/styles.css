@@ -552,7 +552,7 @@ section {
     
     /* ZUSAMMENGEFÜHRT: Hero Definitionen */
     .hero {
-        padding-top: 200px !important;
+        padding-top: 400px !important;
         min-height: 100vh;
         overflow: hidden;
     }
