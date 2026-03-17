@@ -882,6 +882,82 @@ footer p {
     margin-bottom: 0;
 }
 
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 992px) {
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-image { margin-top: 2rem; }
+    .about-content { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .profile-image {
+        width: 280px !important;
+        height: 280px !important;
+    }
+}
+
+@media (min-width: 993px) {
+    .profile-image {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    header .container { flex-direction: column; }
+    nav ul {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    nav ul li { margin: 5px 10px; }
+    .resume-btn { margin-top: 1rem; }
+    main { padding-top: 150px; }
+    .hero-content h1 { font-size: 2.8rem; }
+    .hero-content h2 { font-size: 1.5rem; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .skills-category h3 { font-size: 22px; }
+    .skill-name, .soft-skill-name, .language-name, .tile-skill-name { font-size: 16px; }
+    .soft-skill-icon {
+        font-size: 24px;
+        margin-right: 10px;
+    }
+    
+    .timeline::after { left: 20px; }
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 10px;
+    }
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) { left: 0; }
+    .timeline-item::after { left: 10px; }
+    .timeline-date {
+        position: relative;
+        top: auto;
+        width: auto;
+        text-align: left;
+        margin-bottom: 10px;
+        right: auto !important;
+        left: auto !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content h1 { font-size: 2.2rem; }
+    .hero-content h2 { font-size: 1.3rem; }
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+    .section-title { font-size: 2rem; }
+}
 
 
 
