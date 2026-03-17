@@ -40,7 +40,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background-color: background-color: var(--accent-color);
+    background-color: var(--primary-color);
     color: white;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
