@@ -14,7 +14,7 @@
     .hero {
         padding-top: 20px !important;
         min-height: 100vh;
-        scroll-margin-top: 0 !important;
+        overflow: hidden;
     }
     
     .hero-brain {
@@ -39,7 +39,7 @@
     
     /* Hero Content - Textbereich */
     .hero-content {
-        margin-top: 70px !important;
+        margin-top: 50px !important;
         text-align: center;
         order: 2;
     }
