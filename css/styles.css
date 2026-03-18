@@ -976,7 +976,7 @@ textarea::placeholder {
 
 .captcha-container .captcha-question p[data-i18n="form_captcha"] {
     color: #e0f7ff !important;  /* Schriftfarbe wie Nachricht im Textarea */
-    background: #5e9fd6 !important;  /* Hintergrund wie 128-bit */
+    background: #1a4a7a !important;  /* Hintergrund wie 128-bit */
     padding: 8px 12px !important;
     border-radius: 4px !important;
     font-weight: 500  !important;
@@ -994,6 +994,13 @@ textarea::placeholder {
     opacity: 0.8;
 }
 
+#captcha-answer {
+    display: flex;
+    align-items: center;     /* Vertikal zentrieren */
+    justify-content: center; /* Horizontal zentrieren */
+    text-align: center;      /* Fallback für den Text */
+    height: 50px;
+}
 
 
 
