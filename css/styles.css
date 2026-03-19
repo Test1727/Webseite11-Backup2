@@ -1145,95 +1145,7 @@ section {
 /* ========================================
    CONTACT SECTION
    ======================================== */
-
-.contact .container {
-                padding: 2rem 0;
-            }
-            
-            .contact-layout {
-                display: flex;
-                flex-wrap: wrap;
-                margin-bottom: 2rem;
-            }
-            
-            .contact-left-column {
-                flex: 1;
-                padding-right: 2rem;
-                min-width: 300px;
-            }
-            
-            .contact-right-column {
-                flex: 1;
-                min-width: 300px;
-            }
-            
-            .contact-textbox {
-                background-color: #f8f9fa;
-                border-radius: 8px;
-                padding: 1.5rem;
-                margin-bottom: 20px;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            }
-            
-            .contact-textbox h3 {
-                margin-top: 0;
-                color: #0a3d62;
-                border-bottom: 2px solid #0a3d62;
-                padding-bottom: 0.5rem;
-                margin-bottom: 1rem;
-            }
-            
-            .contact-content p {
-                margin: 0.5rem 0;
-            }
-            
-            .contact-form-container {
-                background-color: #f8f9fa;
-                border-radius: 8px;
-                padding: 1.5rem;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            }
-            
-            .contact-form .form-group {
-                margin-bottom: 1.5rem;
-            }
-            
-            .contact-form label {
-                display: block;
-                margin-bottom: 0.5rem;
-                font-weight: 500;
-            }
-            
-            .contact-form input,
-            .contact-form textarea {
-                width: 100%;
-                padding: 0.75rem;
-                border: 1px solid #ced4da;
-                border-radius: 4px;
-            }
-         .captcha-container {
-                background-color: #e9ecef;
-                padding: 1rem;
-                border-radius: 4px;
-                text-align: center;
-                margin: 1rem 0;
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ===== CONTACT SECTION - BASIS LAYOUT ===== */
 .contact {
     background: linear-gradient(120deg, #f9f5f0 0%, #f2eae3 100%);
     position: relative;
@@ -1271,6 +1183,7 @@ section {
 .contact .container {
     position: relative;
     z-index: 1;
+    padding: 2rem 0;
 }
 
 /* Entfernt den orangenen Standard-Fokus-Rahmen */
@@ -1278,103 +1191,72 @@ section {
     outline: none;
 }
 
+/* ===== CONTACT LAYOUT ===== */
+.contact-layout {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
 
+.contact-left-column {
+    flex: 1;
+    padding-right: 2rem;
+    min-width: 300px;
+}
 
+.contact-right-column {
+    flex: 1;
+    min-width: 300px;
+}
 
+/* ===== CONTACT TEXTBOXES ===== */
+.contact-textbox {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
+.contact-textbox h3 {
+    margin-top: 0;
+    color: #0a3d62;
+    border-bottom: 2px solid #0a3d62;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
 
+.contact-content p {
+    margin: 0.5rem 0;
+}
 
+/* ===== CONTACT FORM ===== */
+.contact-form-container {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
-            .contact .container {
-                padding: 2rem 0;
-            }
-            
-            .contact-layout {
-                display: flex;
-                flex-wrap: wrap;
-                margin-bottom: 2rem;
-            }
-            
-            .contact-left-column {
-                flex: 1;
-                padding-right: 2rem;
-                min-width: 300px;
-            }
-            
-            .contact-right-column {
-                flex: 1;
-                min-width: 300px;
-            }
-            
-            .contact-textbox {
-                background-color: #f8f9fa;
-                border-radius: 8px;
-                padding: 1.5rem;
-                margin-bottom: 20px;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            }
-            
-            .contact-textbox h3 {
-                margin-top: 0;
-                color: #0a3d62;
-                border-bottom: 2px solid #0a3d62;
-                padding-bottom: 0.5rem;
-                margin-bottom: 1rem;
-            }
-            
-            .contact-content p {
-                margin: 0.5rem 0;
-            }
-            
-            .contact-form-container {
-                background-color: #f8f9fa;
-                border-radius: 8px;
-                padding: 1.5rem;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            }
-            
-            .contact-form .form-group {
-                margin-bottom: 1.5rem;
-            }
-            
-            .contact-form label {
-                display: block;
-                margin-bottom: 0.5rem;
-                font-weight: 500;
-            }
-            
-            .contact-form input,
-            .contact-form textarea {
-                width: 100%;
-                padding: 0.75rem;
-                border: 1px solid #ced4da;
-                border-radius: 4px;
-            }
-         .captcha-container {
-                background-color: #e9ecef;
-                padding: 1rem;
-                border-radius: 4px;
-                text-align: center;
-                margin: 1rem 0;
-            }
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
 
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
 
+.contact-form input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Für label[for="contact-message"] - WIRD VERWENDET */
+/* ===== SPEZIELLE FORM-ELEMENTE ===== */
+/* Für label[for="contact-message"] */
 label[for="contact-message"] {
     display: flex;
     align-items: center;
@@ -1383,7 +1265,7 @@ label[for="contact-message"] {
     font-weight: 500;
 }
 
-/* Für .futuristic-badge - WIRD VERWENDET (im Label) */
+/* Für .futuristic-badge (im Label) */
 .futuristic-badge {
     display: inline-block;
     background: linear-gradient(90deg, #00c6ff, #0072ff);
@@ -1394,35 +1276,33 @@ label[for="contact-message"] {
     box-shadow: 0 0 8px rgba(0, 198, 255, 0.7);
 }
 
-/* Für textarea - WIRD VERWENDET */
-textarea {
+/* Für textarea - SPEZIFISCHES STYLING BEIBEHALTEN */
+.contact-form textarea {
     width: 100%;
     background: #1a4a7a;
     border: 1px solid #0a3d62;
     color: #e0f7ff;
-     height: 140px;                 /* 👈 wichtig */
-    padding: 12px;      
+    height: 140px;
+    padding: 12px;
+    padding-top: 35px;
     border-radius: 6px;
-   font-size: 1.05rem;
-letter-spacing: 0.5px;
-   line-height: 2.2;
-   padding-top: 35px !important;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    line-height: 2.2;
 }
 
-textarea:focus {
+.contact-form textarea:focus {
     box-shadow: 0 0 10px #00c6ff;
     border-color: #00c6ff;
 }
 
-textarea::placeholder {
+.contact-form textarea::placeholder {
     color: #a0c0e0;
     opacity: 0.9;
     font-size: 0.95rem;
 }
 
-
-
-/* Für .encryption-status und Kinder - WIRD VERWENDET */
+/* Für .encryption-status */
 .encryption-status {
     margin-top: 5px;
     font-size: 0.8rem;
@@ -1447,7 +1327,7 @@ textarea::placeholder {
     font-weight: 600;
 }
 
-/* Für .input-wrapper und Kinder - WIRD VERWENDET */
+/* Für .input-wrapper */
 .input-wrapper {
     display: flex;
     align-items: center;
@@ -1473,70 +1353,74 @@ textarea::placeholder {
     color: #e0f7ff;
 }
 
-/* Für @keyframes pulse - WIRD VERWENDET */
+/* Für @keyframes pulse */
 @keyframes pulse {
     0% { opacity: 0.3; }
     50% { opacity: 1; }
     100% { opacity: 0.3; }
 }
 
-
-.captcha-container .captcha-question p[data-i18n="form_captcha"] {
-    color: #e0f7ff !important;  /* Schriftfarbe wie Nachricht im Textarea */
-    background: #1a4a7a !important;  /* Hintergrund wie 128-bit */
-    padding: 8px 12px !important;
-    border-radius: 4px !important;
-    font-weight: 500  !important;
-    margin-bottom: 10px !important;
+/* ===== CAPTCHA ===== */
+.captcha-container {
+    background-color: #e9ecef;
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+    margin: 1rem 0;
 }
 
-
+.captcha-container .captcha-question p[data-i18n="form_captcha"] {
+    color: #e0f7ff !important;
+    background: #1a4a7a !important;
+    padding: 8px 12px !important;
+    border-radius: 4px !important;
+    font-weight: 500 !important;
+    margin-bottom: 10px !important;
+}
 
 .captcha-hint {
     display: block;
     margin-top: 8px;
     font-style: italic;
-    color: #5e9fd6;  /* Auch gleiche Farbe */
+    color: #5e9fd6;
     font-size: 0.85rem;
     opacity: 0.8;
 }
 
-
 #captcha-answer {
     display: flex;
-    align-items: center;     /* Vertikal zentrieren */
-    justify-content: center; /* Horizontal zentrieren */
-    text-align: center;      /* Fallback für den Text */
-    height: 60px;            /* Etwas größer */
-    font-size: 0.8rem;      /* Größere Schrift */
-    font-weight: 500;       /* Fetter (700 = bold) */
-    letter-spacing: 0.5px;   /* Minimal mehr Platz zwischen Buchstaben */
-   color: #1a4a7a;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 60px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #1a4a7a;
 }
 
+/* ===== MAP SECTION ===== */
+.map-section {
+    margin-top: 2rem;
+    width: 100%;
+}
 
-       
-            .map-section {
-                margin-top: 2rem;
-                width: 100%;
-            }
-            
-            .map-section h3 {
-                color: #0a3d62;
-                border-bottom: 2px solid #0a3d62;
-                padding-bottom: 0.5rem;
-                margin-bottom: 1rem;
-            }
-            
-            .google-map-placeholder {
-                background-color: #e9ecef;
-                height: 450px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 8px;
-                text-align: center;
-            }
+.map-section h3 {
+    color: #0a3d62;
+    border-bottom: 2px solid #0a3d62;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.google-map-placeholder {
+    background-color: #e9ecef;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    text-align: center;
+}
 
 
 
