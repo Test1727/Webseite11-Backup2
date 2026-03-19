@@ -1010,6 +1010,7 @@ textarea::placeholder {
     font-size: 0.8rem;      /* Größere Schrift */
     font-weight: 500;       /* Fetter (700 = bold) */
     letter-spacing: 0.5px;   /* Minimal mehr Platz zwischen Buchstaben */
+   color: #1a4a7a;
 }
 
 
