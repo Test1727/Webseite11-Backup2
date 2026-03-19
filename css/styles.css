@@ -1142,20 +1142,6 @@ section {
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ========================================
    CONTACT SECTION
    ======================================== */
@@ -1203,6 +1189,96 @@ section {
 :focus {
     outline: none;
 }
+
+
+
+
+
+
+
+
+            .contact .container {
+                padding: 2rem 0;
+            }
+            
+            .contact-layout {
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 2rem;
+            }
+            
+            .contact-left-column {
+                flex: 1;
+                padding-right: 2rem;
+                min-width: 300px;
+            }
+            
+            .contact-right-column {
+                flex: 1;
+                min-width: 300px;
+            }
+            
+            .contact-textbox {
+                background-color: #f8f9fa;
+                border-radius: 8px;
+                padding: 1.5rem;
+                margin-bottom: 20px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            
+            .contact-textbox h3 {
+                margin-top: 0;
+                color: #0a3d62;
+                border-bottom: 2px solid #0a3d62;
+                padding-bottom: 0.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .contact-content p {
+                margin: 0.5rem 0;
+            }
+            
+            .contact-form-container {
+                background-color: #f8f9fa;
+                border-radius: 8px;
+                padding: 1.5rem;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            
+            .contact-form .form-group {
+                margin-bottom: 1.5rem;
+            }
+            
+            .contact-form label {
+                display: block;
+                margin-bottom: 0.5rem;
+                font-weight: 500;
+            }
+            
+            .contact-form input,
+            .contact-form textarea {
+                width: 100%;
+                padding: 0.75rem;
+                border: 1px solid #ced4da;
+                border-radius: 4px;
+            }
+         .captcha-container {
+                background-color: #e9ecef;
+                padding: 1rem;
+                border-radius: 4px;
+                text-align: center;
+                margin: 1rem 0;
+            }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1346,6 +1422,29 @@ textarea::placeholder {
    color: #1a4a7a;
 }
 
+
+       
+            .map-section {
+                margin-top: 2rem;
+                width: 100%;
+            }
+            
+            .map-section h3 {
+                color: #0a3d62;
+                border-bottom: 2px solid #0a3d62;
+                padding-bottom: 0.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .google-map-placeholder {
+                background-color: #e9ecef;
+                height: 450px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 8px;
+                text-align: center;
+            }
 
 
 
