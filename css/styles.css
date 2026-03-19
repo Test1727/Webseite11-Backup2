@@ -823,6 +823,341 @@ section {
     z-index: 1;
 }
 
+<!-- FILMSTREIFEN STYLES (direkt eingefügt) -->
+    <style>
+        /* ===== FILMSTREIFEN STYLES ===== */
+        .projects-carousel {
+            position: relative;
+            width: 100%;
+            margin: 2rem 0;
+            overflow: visible;
+            background: rgba(139, 110, 75, 0.15);
+            border-top: 4px solid #8b6e4b;
+            border-bottom: 4px solid #8b6e4b;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            padding: 40px 0 40px 0;
+            backdrop-filter: blur(2px);
+            z-index: 5;
+        }
+        
+        /* Obere Perforation */
+        .projects-carousel::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 20px,
+                rgba(192, 168, 123, 0.8) 20px,
+                rgba(192, 168, 123, 0.8) 28px
+            );
+            z-index: 6;
+        }
+        
+        /* Untere Perforation */
+        .projects-carousel::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 20px,
+                rgba(192, 168, 123, 0.8) 20px,
+                rgba(192, 168, 123, 0.8) 28px
+            );
+            z-index: 6;
+        }
+        
+        .projects-carousel .carousel-container {
+            position: relative;
+            display: flex;
+            transition: transform 0.5s ease;
+            gap: 0;
+            padding: 20px 0;
+            margin: 0 20px;
+        }
+        
+        /* Kodak-Schriftzug oben */
+        .projects-carousel .carousel-container::before {
+            content: 'KODAK 35mm';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(192, 168, 123, 0.9);
+            font-size: 12px;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 2px;
+            text-shadow: 0 0 5px rgba(0,0,0,0.3);
+            z-index: 7;
+        }
+
+        /* SAFETY FILM Schriftzüge */
+        .safety-film-left {
+            position: absolute;
+            bottom: 25px;
+            left: 20px;
+            color: rgba(192, 168, 123, 0.9);
+            font-size: 12px;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 1px;
+            text-shadow: 0 0 5px rgba(0,0,0,0.3);
+            z-index: 8;
+            background: rgba(0,0,0,0.1);
+            padding: 2px 5px;
+            border-radius: 3px;
+            opacity: 0.9;
+        }
+
+        .safety-film-right {
+            position: absolute;
+            bottom: 25px;
+            right: 20px;
+            color: rgba(192, 168, 123, 0.9);
+            font-size: 12px;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 1px;
+            text-shadow: 0 0 5px rgba(0,0,0,0.3);
+            z-index: 8;
+            background: rgba(0,0,0,0.1);
+            padding: 2px 5px;
+            border-radius: 3px;
+            opacity: 0.9;
+        }
+
+        .safety-film-center {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(192, 168, 123, 0.9);
+            font-size: 12px;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 1px;
+            text-shadow: 0 0 5px rgba(0,0,0,0.3);
+            z-index: 8;
+            background: rgba(0,0,0,0.1);
+            padding: 2px 5px;
+            border-radius: 3px;
+            opacity: 0.9;
+        }
+
+        .projects-carousel {
+            max-width: 100%;
+            overflow: hidden;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .carousel-slide:hover {
+            transform: translateY(-5px);
+            z-index: 10;
+        }
+   
+        .project-card-carousel {
+            background: rgba(245, 242, 230, 0.95);
+            border-radius: 8px 8px 4px 4px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2), inset 0 0 0 1px rgba(255,255,200,0.3);
+            overflow: hidden;
+            height: 550px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #5a4a3a;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            position: relative;
+            backdrop-filter: blur(2px);
+            min-height: 550px;
+        }
+
+        .project-card-carousel::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.15);
+            pointer-events: none;
+            border-radius: 8px;
+        }
+
+        .project-card-carousel:hover {
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3), inset 0 0 0 1px rgba(255,255,200,0.4);
+            transform: scale(1.02);
+        }
+
+        .carousel-header {
+            background: linear-gradient(135deg, #2c4b6b 0%, #1a3a54 100%);
+            color: white;
+            padding: 1.2rem;
+            border-bottom: 2px solid #8b6e4b;
+        }
+
+        .carousel-header h3 {
+            margin: 0;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .carousel-header p {
+            margin: 0.3rem 0 0 0;
+            color: #c0a87b;
+            font-size: 0.8rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        .carousel-body {
+            padding: 1rem;
+            flex: 1;
+            background: rgba(245, 242, 230, 0.9);
+        }
+
+        .carousel-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-body ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .carousel-body li {
+            margin-bottom: 0.6rem;
+            padding-left: 1.2rem;
+            position: relative;
+            font-size: 0.85rem;
+            line-height: 1.3;
+            color: #1a3a54;
+        }
+
+        .carousel-body li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #8b6e4b;
+            font-weight: bold;
+        }
+
+        .carousel-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            padding: 1rem 1.2rem 1.2rem;
+            border-top: 2px solid #c0a87b;
+        }
+
+        .carousel-tag {
+            background: #2c4b6b;
+            color: #f0e6d2;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 400;
+            font-family: 'Courier New', monospace;
+            border: 1px solid #8b6e4b;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.7);
+            border: 2px solid #3e92cc;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 20;
+            color: #0a3d62;
+            backdrop-filter: blur(5px);
+        }
+
+        .carousel-button:hover {
+            background: #3e92cc;
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+            border-color: white;
+        }
+
+        .carousel-button.prev {
+            left: 10px;
+        }
+
+        .carousel-button.next {
+            right: 10px;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 15;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid #3e92cc;
+            backdrop-filter: blur(2px);
+        }
+
+        .carousel-dot.active {
+            background: #3e92cc;
+            transform: scale(1.3);
+            box-shadow: 0 0 15px #3e92cc;
+        }
+
+        /* Slide-Breiten */
+        .carousel-slide {
+            width: calc(33.333% - 2px);
+            flex: 0 0 auto;
+            transition: transform 0.3s ease;
+            position: relative;
+            border-right: 2px solid #ff8c42;
+            box-sizing: border-box;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ========================================
    CONTACT SECTION
    ======================================== */
