@@ -321,6 +321,26 @@ nav ul li a {
 
 
 
+   @media (max-width: 992px) {
+            .carousel-slide {
+                width: calc(50% - 2px);
+            }
+        }
+
+
+
+
+
+
+        /* Desktop - SAFETY FILM sichtbar */
+        @media (min-width: 769px) {
+            .safety-film-left, 
+            .safety-film-right {
+                display: block;
+            }
+        }
+
+
 
     
 }
