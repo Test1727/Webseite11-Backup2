@@ -1573,7 +1573,6 @@ footer p {
 
 section[id] {
     scroll-margin-top: calc(70px + 0.1rem); /* 70px für Header + kleiner Puffer */
-    scroll-behavior: smooth;
 
 
 
