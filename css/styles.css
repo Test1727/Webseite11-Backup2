@@ -1571,8 +1571,8 @@ footer p {
    SCROLL VERHALTEN
    ======================================== */
 
-section[id] {
-    scroll-margin-top: calc(70px + 0.1rem); /* 70px für Header + kleiner Puffer */
+/*section[id] {
+    scroll-margin-top: calc(70px + 0.1rem); /* 70px für Header + kleiner Puffer */*/
 
 
 
