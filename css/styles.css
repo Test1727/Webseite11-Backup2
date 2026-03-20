@@ -1442,7 +1442,7 @@ label[for="contact-message"] {
 
 /* ===== CAPTCHA ===== */
 .captcha-container {
-    background-color: #e9ecef;
+    background-color: transparent;
     padding: 1rem;
     border-radius: 4px;
     text-align: center;
