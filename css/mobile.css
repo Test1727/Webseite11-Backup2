@@ -4,7 +4,6 @@
 
     section {
     padding: 60px 0;
-    scroll-padding-top: 80px; /* damit passt das Scrollen auf dem Smartphone */
 }
 
 
@@ -359,7 +358,7 @@ nav ul li a {
     }
 
         section[id] {
-        scroll-margin-top: 100px;
+        scroll-margin-top: 80px;
     }
 
 
