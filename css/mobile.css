@@ -422,8 +422,17 @@
 /* Kleine Smartphones (bis 480px) */
 @media (max-width: 480px) {
     .hero {
-        overflow: hidden;
+        overflow-x: hidden;
     }
+
+      .hero-brain {
+        left: -120% !important;  /* Weiter nach links schieben */
+        min-width: 400% !important;  /* Noch größer machen */
+        transform: rotate(-90deg) scale(1.8) !important;  /* Skalierung anpassen */
+    }
+
+
+
     
     .hero-content h1 {
         font-size: 2.2rem;
