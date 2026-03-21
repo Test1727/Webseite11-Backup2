@@ -845,92 +845,139 @@
     <script src="js/main.js" defer></script>
     <script src="js/resume-modal.js" defer></script>
     <script src="js/contact-form.js" defer></script>
+
+
+
+<script>
+// ===== VERBESSERTES KARUSSELL MIT PERFEKTER ZENTRIERUNG =====
+let currentIndex = 0;
+let slides = [];
+let dots = [];
+let carouselContainer = null;
+let totalSlides = 0;
+
+function initCarousel() {
+    slides = document.querySelectorAll('.carousel-slide');
+    dots = document.querySelectorAll('.carousel-dot');
+    carouselContainer = document.getElementById('projectCarousel');
+    totalSlides = slides.length;
     
-    <!-- KARUSSELL JAVASCRIPT -->
-    <script>
-    // ===== KARUSSELL JAVASCRIPT =====
-    let currentIndex = 0;
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.carousel-dot');
-    const carouselContainer = document.getElementById('projectCarousel');
-    const totalSlides = slides.length;
+    if (totalSlides === 0) return;
+    
+    // Initiale Position
+    updateCarousel();
+}
 
-    function getSlideWidth() {
-        // Berechnet die aktuelle Breite inkl. Abstände
-        return slides[0].offsetWidth + 2; // +2 für border-right
-    }
-
-    function updateCarousel() {
-        const slideWidth = getSlideWidth();
-        carouselContainer.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-        
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentIndex);
-        });
-    }
-
-    function moveSlide(direction) {
-        currentIndex += direction;
-        
-        if (currentIndex < 0) {
-            currentIndex = 0;
-        } else if (currentIndex >= totalSlides) {
-            currentIndex = totalSlides - 1;
+function getSlideWidth() {
+    if (!slides.length) return 0;
+    
+    // Auf mobilen Geräten (≤768px) die volle Breite nehmen
+    if (window.innerWidth <= 768) {
+        const container = document.querySelector('.projects-carousel');
+        if (container) {
+            return container.clientWidth;
         }
+        return window.innerWidth - 40; // Abzüglich Padding
+    }
+    
+    // Auf Desktop: Breite des ersten Slides
+    return slides[0].offsetWidth;
+}
+
+function updateCarousel() {
+    if (!carouselContainer || !slides.length) return;
+    
+    const slideWidth = getSlideWidth();
+    const translateValue = -currentIndex * slideWidth;
+    carouselContainer.style.transform = `translateX(${translateValue}px)`;
+    
+    // Dots aktualisieren
+    dots.forEach((dot, index) => {
+        if (index === currentIndex) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
+
+function moveSlide(direction) {
+    if (totalSlides === 0) return;
+    
+    currentIndex += direction;
+    
+    if (currentIndex < 0) {
+        currentIndex = 0;
+    } else if (currentIndex >= totalSlides) {
+        currentIndex = totalSlides - 1;
+    }
+    
+    updateCarousel();
+}
+
+function currentSlide(index) {
+    if (index < 0 || index >= totalSlides) return;
+    currentIndex = index;
+    updateCarousel();
+}
+
+// Touch-Swipe für mobile Geräte
+let touchStartX = 0;
+let touchEndX = 0;
+
+function setupTouchSwipe() {
+    const carousel = document.querySelector('.projects-carousel');
+    if (!carousel) return;
+    
+    carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const swipeDistance = touchEndX - touchStartX;
         
-        updateCarousel();
-    }
-
-    function currentSlide(index) {
-        currentIndex = index;
-        updateCarousel();
-    }
-
-    // Bei Fenstergrößenänderung neu berechnen
-    window.addEventListener('resize', () => {
-        updateCarousel();
-    });
-
-    // Initialisierung
-    document.addEventListener('DOMContentLoaded', function() {
-        updateCarousel();
-    });
-    </script>
-
-    <manus-content-root></manus-content-root>
-    <script>
-        var __manus_space_editor_info = {
-            spaceId : 'pevptdzn',
-            patchList : [],
-            hideBadge : false,
-            sessionId : '',
-            isWebDev : false,
-            usageStatus : 'UsageStatus_Unknown',
-        };
-        var __manus__global_env = {
-            apiHost: 'https://api.manus.im',
-            host: 'https://manus.im',
-            amplitudeKey: '46ac3f9abb41dd2d17a5785e052bc6d3',
-        };
-    </script>
-    <script src="https://files.manuscdn.com/manus-space-dispatcher/spaceEditor-DPV-_I11.js" async></script>
-    <script
-        defer
-        data-domain="manus.space"
-        src="https://plausible.io/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"
-    ></script>
-    <script>
-        window.plausible =
-            window.plausible ||
-            function () {
-                (window.plausible.q = window.plausible.q || []).push(arguments);
-            };
-        plausible('custom-pageview', {
-            props: {
-                domain: window.location.host
+        if (Math.abs(swipeDistance) > 50) {
+            if (swipeDistance > 0) {
+                moveSlide(-1); // Nach rechts wischen = vorheriges
+            } else {
+                moveSlide(1); // Nach links wischen = nächstes
             }
-        })
-    </script>
+        }
+    }, { passive: true });
+}
+
+// Bei Fenstergrößenänderung
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        updateCarousel();
+    }, 100);
+});
+
+// Initialisierung
+document.addEventListener('DOMContentLoaded', function() {
+    initCarousel();
+    setupTouchSwipe();
+    
+    // Initiale Aktualisierung nach kurzer Verzögerung
+    setTimeout(() => {
+        updateCarousel();
+    }, 100);
+});
+</script>
+
+    
+
+
+
+
+
+
+
+
+    
 
 
 <!-- VEREINFACHTES SCROLL-SKRIPT -->
