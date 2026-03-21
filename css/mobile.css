@@ -20,20 +20,21 @@
         margin: 0 !important;
     }
 
-       .projects-carousel .carousel-container {
-        max-width: 900px !important;
-        margin: 0 auto !important;
-        justify-content: center !important;
-    }
-    
+.projects-carousel .carousel-container {
+    display: flex !important;
+    max-width: 900px !important;
+    margin: 0 auto !important;
+    justify-content: center !important;
+    gap: 20px !important;
+}
+
 .carousel-slide {
     flex: 0 0 300px !important;
     width: 300px !important;
+    min-width: 300px !important;
     max-width: 300px !important;
 }
-    
-    
- 
+
 
     .projects-carousel {
         max-width: 1200px !important;
