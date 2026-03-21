@@ -1016,6 +1016,57 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     </script>
 
+
+    <!-- Ihre anderen Skripte -->
+    <script src="js/language-switcher.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/resume-modal.js" defer></script>
+    <script src="js/contact-form.js" defer></script>
+
+    <!-- Hier das neue Skript einfügen -->
+    <script>
+    // Dynamische Header-Höhe für mobiles Scroll-Padding
+    (function() {
+        function setMobileScrollPadding() {
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            
+            if (isMobile) {
+                // Header-Höhe berechnen
+                const header = document.querySelector('header');
+                const headerHeight = header ? header.offsetHeight : 0;
+                
+                // HTML scroll-padding-top setzen
+                document.documentElement.style.scrollPaddingTop = headerHeight + 'px';
+                
+                // Für Hero-Bereich
+                const hero = document.querySelector('.hero');
+                if (hero) {
+                    hero.style.paddingTop = headerHeight + 'px';
+                }
+                
+                console.log('Mobile Header-Höhe gesetzt:', headerHeight + 'px');
+            } else {
+                // Desktop: zurücksetzen
+                document.documentElement.style.scrollPaddingTop = '70px';
+                const hero = document.querySelector('.hero');
+                if (hero) {
+                    hero.style.paddingTop = '';
+                }
+            }
+        }
+        
+        // Beim Laden und bei Fenstergrößenänderung ausführen
+        window.addEventListener('load', setMobileScrollPadding);
+        window.addEventListener('resize', setMobileScrollPadding);
+        
+        // Zusätzlich nach kurzer Verzögerung (falls Bilder noch laden)
+        setTimeout(setMobileScrollPadding, 100);
+    })();
+    </script>
+
+</body>
+</html>
+
     
 </body>
 </html>
