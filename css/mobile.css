@@ -161,12 +161,25 @@
     
     /* === ALLGEMEINE LAYOUTS === */
     html {
-        scroll-padding-top: 110px;
+        scroll-padding-top: 120px;
     }
 
     section {
         padding: 60px 0;
     }
+
+    /* === SEKTIONSÜBERSCHRIFTEN KOMPAKTER === */
+    .section-title {
+        font-size: 1.8rem !important;      /* Von 2.5rem auf 1.8rem verkleinert */
+        margin-bottom: 2rem !important;    /* Weniger Abstand nach unten */
+        padding-bottom: 0.6rem !important; /* Weniger Padding unter der Überschrift */
+    }
+    
+    .section-title::after {
+        width: 60px !important;             /* Kürzere Unterstreichung */
+        height: 3px !important;             /* Dünnere Linie */
+    }
+    
 
     /* Hero Section */
     .hero {
