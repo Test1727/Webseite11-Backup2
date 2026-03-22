@@ -140,17 +140,24 @@
         justify-content: center;
         gap: 10px;
     }
-    
-    .language-selector select,
-    .resume-btn {
-        height: 32px !important;
-        font-size: 0.7rem !important;
-        padding: 4px 12px !important;
-    }
-    
-    .language-selector select {
-        padding-right: 24px !important;
-    }
+
+    /* === HEADER & NAVIGATION === */
+
+.language-selector select,
+.resume-btn {
+    height: 28px !important;      /* Von 32px auf 28px reduziert */
+    font-size: 0.65rem !important; /* Von 0.7rem auf 0.65rem reduziert */
+    padding: 2px 10px !important;  /* Von 4px 12px auf 2px 10px reduziert */
+}
+
+.language-selector select {
+    padding-right: 22px !important; /* Angepasst für kleineren Button */
+}
+
+
+
+
+
     
     /* === HERO SECTION === */
     .hero {
