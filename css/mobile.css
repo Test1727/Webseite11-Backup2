@@ -23,10 +23,7 @@
         margin: 0 !important;
         padding: 0 !important;
         overflow-x: hidden !important;
-        width: 100% !important;
-        /*scroll-padding-top: 80px !important;*/
-       /*scroll-padding-top: clamp(70px, 8vh, 90px) !important;
-        /* 70px bei schmalem Fenster, 90px bei breitem */      
+        width: 100% !important;     
     }
     
     
