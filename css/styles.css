@@ -31,8 +31,6 @@
     scroll-behavior: smooth;
 }*/
 
-
-
 body {
     font-family: var(--font-secondary);
     line-height: 1.6;
@@ -254,9 +252,9 @@ nav ul li a.active {
 
 main { padding-top: 0 !important; }
 
-/*section {
+section {
     padding: 60px 0;
-} */
+} 
 
 
 /* ========================================
@@ -494,7 +492,6 @@ main { padding-top: 0 !important; }
    ======================================== */
 
 .experience {
-    padding: 60px 0;
     position: relative;
     background: linear-gradient(120deg, #f2f5fa 0%, #e8ecf5 100%);
     overflow: hidden;
@@ -644,7 +641,6 @@ main { padding-top: 0 !important; }
     background: linear-gradient(120deg, #f9f5f0 0%, #f2eae3 100%);
     position: relative;
     overflow: hidden;
-    padding: 60px 0;
 }
 
 .skills::before {
@@ -847,7 +843,6 @@ main { padding-top: 0 !important; }
     background: linear-gradient(120deg, #f2f5fa 0%, #e3e9f2 100%);
     position: relative;
     overflow: hidden;
-    padding: 60px 0;
 }
 
 .projects::before {
