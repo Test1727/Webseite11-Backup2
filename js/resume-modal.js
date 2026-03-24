@@ -292,7 +292,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Platzhalter nach Zerfall anzeigen mit glitzernden Sternen (nur Cyan)
+    // Platzhalter nach Zerfall anzeigen mit glitzernden Sternen (nur Cyan, nur ✨)
     function showPlaceholder(container) {
         container.innerHTML = '';
         
@@ -313,19 +313,21 @@ document.addEventListener('DOMContentLoaded', function() {
         placeholder.appendChild(content);
         container.appendChild(placeholder);
         
-        // Glitzer-Effekt (funkelnde Sterne in Cyan)
+        // Glitzer-Effekt (nur ✨ in Cyan)
         const glitzerContainer = document.createElement('div');
         glitzerContainer.className = 'glitzer-container';
         placeholder.appendChild(glitzerContainer);
         
+        // Nur ✨ als Glitzer
         const glitzerShapes = ['✨'];
         
         function createGlitzer() {
             const glitzer = document.createElement('div');
             const randomShape = glitzerShapes[Math.floor(Math.random() * glitzerShapes.length)];
             const size = 14 + Math.random() * 18;
-            const posX = Math.random() * (placeholder.clientWidth - 50);
-            const posY = Math.random() * (placeholder.clientHeight - 50);
+            // Verwende offsetWidth/offsetHeight für vollflächige Verteilung
+            const posX = Math.random() * placeholder.offsetWidth;
+            const posY = Math.random() * placeholder.offsetHeight;
             
             glitzer.innerHTML = randomShape;
             glitzer.style.position = 'absolute';
@@ -351,18 +353,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 50);
         }
         
-        let glitzerInterval = setInterval(() => {
-            if (placeholder.isConnected) {
-                createGlitzer();
-            } else {
-                clearInterval(glitzerInterval);
-            }
-        }, 350);
+        // Kurze Verzögerung, damit der Container vollständig gerendert ist
+        setTimeout(() => {
+            let glitzerInterval = setInterval(() => {
+                if (placeholder.isConnected) {
+                    createGlitzer();
+                } else {
+                    clearInterval(glitzerInterval);
+                }
+            }, 350);
+        }, 100);
         
         // Animation stoppen wenn Modal geschlossen wird
         const modalElement = document.getElementById('resume-modal');
+        let glitzerIntervalId = null;
+        
         const closeModalHandler = function() {
-            clearInterval(glitzerInterval);
+            if (glitzerIntervalId) {
+                clearInterval(glitzerIntervalId);
+            }
         };
         
         const modalCloseBtn = document.querySelector('.close-modal');
@@ -373,12 +382,16 @@ document.addEventListener('DOMContentLoaded', function() {
             if (e.target === modalElement) closeModalHandler();
         });
         
-        // Download-Button deaktivieren
+        // Download-Button komplett ausblenden
         const downloadBtnElem = document.getElementById('download-resume');
         if (downloadBtnElem) {
-            downloadBtnElem.style.opacity = '0.5';
-            downloadBtnElem.style.pointerEvents = 'none';
-            downloadBtnElem.title = 'Lebenslauf nur auf persönliche Anfrage';
+            downloadBtnElem.style.display = 'none';
+        }
+        
+        // Optional: Auch den gesamten Footer ausblenden
+        const modalFooter = document.querySelector('.modal-footer');
+        if (modalFooter) {
+            modalFooter.style.display = 'none';
         }
     }
     
@@ -399,7 +412,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300);
     }
     
-    // Download-Funktion
+    // Download-Funktion (wird durch das Ausblenden des Buttons nicht mehr benötigt, aber bleibt für die Struktur)
     downloadBtn.addEventListener('click', function(e) {
         e.preventDefault();
         const iosHintElem = document.getElementById('ios-download-hint');
