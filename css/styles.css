@@ -262,7 +262,9 @@ section {
    ======================================== */
 
 .hero {
-    height: 100vh;
+    /*height: 100vh;*/
+    min-height: 100vh;  /* statt height: 100vh */
+    height: auto;       /* auto statt feste Höhe */
     display: flex;
     align-items: center;
     justify-content: center;
