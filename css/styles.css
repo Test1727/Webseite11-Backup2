@@ -1235,10 +1235,11 @@ section {
     z-index: 0;
 }
 
+/* Informationen innerhalb Container, section außerhalb */
 .contact .container {
     position: relative;
     z-index: 1;
-    padding: 2rem 0;
+    /*padding: 2rem 0;*/
 }
 
 /* Entfernt den orangenen Standard-Fokus-Rahmen */
@@ -1510,7 +1511,7 @@ label[for="contact-message"] {
 
 
 .map-section {
-    margin-top: 2rem;
+    /*margin-top: 2rem;*/
     width: 100%;
 }
 
