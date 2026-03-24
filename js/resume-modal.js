@@ -294,73 +294,160 @@ Promise.all(loadPromises).then(() => {
             showPlaceholder(container);
         }
     }
+
+// Platzhalter nach Zerfall anzeigen mit animierten Partikeln
+function showPlaceholder(container) {
+    container.innerHTML = '';
     
-    // Platzhalter nach Zerfall anzeigen
-    function showPlaceholder(container) {
-        container.innerHTML = '';
-        
-        const placeholder = document.createElement('div');
-        placeholder.style.padding = '3rem 2rem';
-        placeholder.style.textAlign = 'center';
-        placeholder.style.backgroundColor = '#f8f9fa';
-        placeholder.style.borderRadius = '12px';
-        placeholder.style.border = '2px dashed #0a3d62';
-        placeholder.style.margin = '1rem';
-        placeholder.style.animation = 'fadeIn 0.5s ease';
-        
-        placeholder.innerHTML = `
-            <div style="font-size: 4rem; margin-bottom: 1rem;">📄✨</div>
-            <h3 style="color: #0a3d62; margin-bottom: 1rem;">Lebenslauf auf persönliche Anfrage</h3>
-            <p style="color: #555; margin-bottom: 0.5rem;">Aus Datenschutzgründen wird der vollständige Lebenslauf</p>
-            <p style="color: #555; margin-bottom: 1.5rem;">nur im persönlichen Gespräch zur Verfügung gestellt.</p>
-            <div style="background: #e9ecef; padding: 1rem; border-radius: 8px; display: inline-block;">
-                <span style="font-family: monospace; font-size: 1.1rem;">📧 astridkraft.business@gmail.com</span>
-            </div>
-            <p style="color: #888; font-size: 0.85rem; margin-top: 1.5rem;">
-                <span style="display: inline-block; margin-right: 0.5rem;">🔍</span> 
-                Vorschau kurzzeitig unscharf eingeblendet
-            </p>
-        `;
-        
-        container.appendChild(placeholder);
-        
-        // Download-Button deaktivieren
-        const downloadBtn = document.getElementById('download-resume');
-        if (downloadBtn) {
-            downloadBtn.style.opacity = '0.5';
-            downloadBtn.style.pointerEvents = 'none';
-            downloadBtn.title = 'Lebenslauf nur auf persönliche Anfrage';
+    // Container für den Platzhalter
+    const placeholder = document.createElement('div');
+    placeholder.style.position = 'relative';
+    placeholder.style.padding = '3rem 2rem';
+    placeholder.style.textAlign = 'center';
+    placeholder.style.backgroundColor = '#f8f9fa';
+    placeholder.style.borderRadius = '12px';
+    placeholder.style.border = '2px dashed #0a3d62';
+    placeholder.style.margin = '1rem';
+    placeholder.style.overflow = 'hidden';
+    placeholder.style.minHeight = '400px';
+    placeholder.style.display = 'flex';
+    placeholder.style.flexDirection = 'column';
+    placeholder.style.justifyContent = 'center';
+    placeholder.style.alignItems = 'center';
+    placeholder.style.animation = 'fadeIn 0.5s ease';
+    
+    // Canvas für Partikel-Hintergrund
+    const canvas = document.createElement('canvas');
+    canvas.style.position = 'absolute';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.zIndex = '0';
+    canvas.style.pointerEvents = 'none';
+    placeholder.appendChild(canvas);
+    
+    // Inhalt (über dem Canvas)
+    const content = document.createElement('div');
+    content.style.position = 'relative';
+    content.style.zIndex = '1';
+    content.style.padding = '2rem';
+    
+    content.innerHTML = `
+        <div style="font-size: 5rem; margin-bottom: 1.5rem; filter: drop-shadow(0 0 8px rgba(0,255,255,0.3));">🔒</div>
+        <h3 style="color: #0a3d62; margin-bottom: 1rem; font-size: 1.5rem;">Zugriff eingeschränkt.</h3>
+        <p style="color: #555; font-size: 1rem; max-width: 350px; margin: 0 auto; line-height: 1.6;">
+            Relevante Informationen werden kontextbasiert bereitgestellt.
+        </p>
+    `;
+    
+    placeholder.appendChild(content);
+    container.appendChild(placeholder);
+    
+    // Partikel-Animation
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let animationId = null;
+    let width = 0, height = 0;
+    
+    function resizeCanvas() {
+        const rect = placeholder.getBoundingClientRect();
+        width = rect.width;
+        height = rect.height;
+        canvas.width = width;
+        canvas.height = height;
+    }
+    
+    function createParticles() {
+        const particleCount = 80;
+        particles = [];
+        for (let i = 0; i < particleCount; i++) {
+            particles.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                radius: 2 + Math.random() * 4,
+                speedX: (Math.random() - 0.5) * 0.5,
+                speedY: (Math.random() - 0.5) * 0.3 + 0.2,
+                opacity: 0.3 + Math.random() * 0.5,
+                color: `rgba(0, 255, 255, ${0.4 + Math.random() * 0.4})`
+            });
         }
     }
     
-    // Modal schließen
-    closeBtn.addEventListener('click', closeModal);
+    function drawParticles() {
+        if (!ctx) return;
+        ctx.clearRect(0, 0, width, height);
+        
+        particles.forEach(p => {
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+            ctx.fillStyle = p.color;
+            ctx.fill();
+            
+            // Kleinen Glow-Effekt
+            ctx.shadowBlur = 8;
+            ctx.shadowColor = '#00ffff';
+            ctx.fill();
+            ctx.shadowBlur = 0;
+            
+            // Bewegung
+            p.x += p.speedX;
+            p.y += p.speedY;
+            
+            // Reset wenn aus dem Bild
+            if (p.x < -20) p.x = width + 20;
+            if (p.x > width + 20) p.x = -20;
+            if (p.y < -20) p.y = height + 20;
+            if (p.y > height + 20) p.y = -20;
+        });
+        
+        animationId = requestAnimationFrame(drawParticles);
+    }
+    
+    function initParticles() {
+        resizeCanvas();
+        createParticles();
+        drawParticles();
+    }
+    
+    // Bei Größenänderung neu skalieren
+    const resizeObserver = new ResizeObserver(() => {
+        resizeCanvas();
+        createParticles();
+    });
+    resizeObserver.observe(placeholder);
+    
+    initParticles();
+    
+    // Animation stoppen wenn Modal geschlossen wird
+    const modal = document.getElementById('resume-modal');
+    const closeModalHandler = function() {
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+        }
+        resizeObserver.disconnect();
+    };
+    
+    // Event-Listener für Modal-Schließen
+    const closeBtn = document.querySelector('.close-modal');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModalHandler);
+    }
     modal.addEventListener('click', function(e) {
-        if (e.target === modal) closeModal();
-    });
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+        if (e.target === modal) closeModalHandler();
     });
     
-    function closeModal() {
-        modal.classList.remove('show');
-        setTimeout(() => {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }, 300);
+    // Download-Button deaktivieren
+    const downloadBtn = document.getElementById('download-resume');
+    if (downloadBtn) {
+        downloadBtn.style.opacity = '0.5';
+        downloadBtn.style.pointerEvents = 'none';
+        downloadBtn.title = 'Lebenslauf nur auf persönliche Anfrage';
     }
-    
-    // Download-Funktion
-    downloadBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        const iosHint = document.getElementById('ios-download-hint');
-        if (iosHint) {
-            iosHint.style.display = 'block';
-            iosHint.innerHTML = '<p style="color:#0a3d62;">📋 Der vollständige Lebenslauf ist nur auf persönliche Anfrage verfügbar. Kontaktieren Sie mich gerne!</p>';
-            setTimeout(() => {
-                iosHint.style.display = 'none';
-                iosHint.innerHTML = '';
-            }, 4000);
-        }
-    });
-});
+}
+
+
+
+
+
