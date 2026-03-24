@@ -155,7 +155,8 @@
     padding: 10px 20px;
     font-size: 1rem;
     text-align: center !important;
-    margin-top: 40px;
+display: inline-block !important;  /* ← Flex überschreiben */
+    line-height: 1.4;  /* Vertikale Zentrierung */
     }
     
     .hero-image {
