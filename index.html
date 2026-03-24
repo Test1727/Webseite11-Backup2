@@ -1039,7 +1039,6 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function(e) {
             var href = this.getAttribute('href');
             
-            // Nur interne Links (#...)
             if (href && href.startsWith('#')) {
                 e.preventDefault();
                 
@@ -1049,6 +1048,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     var header = document.querySelector('header');
                     var headerHeight = header ? header.offsetHeight : 70;
                     var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    // Für Tablet (769px - 992px) zusätzlichen Abstand
+                    var width = window.innerWidth;
+                    if (width >= 769 && width <= 992) {
+                        targetPosition = targetPosition - 20;  // 20px extra nach unten
+                    }
                     
                     window.scrollTo({
                         top: targetPosition,
@@ -1060,6 +1065,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 })();
 </script>
+
+
+
+    
+
 
 
 
