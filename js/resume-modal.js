@@ -1,5 +1,8 @@
 // JavaScript für das Lebenslauf-Modal mit PDF.js Integration und Papierschnipsel-Zerfall
 
+// Globale Referenzen für Timeouts
+window.paperShredTimeouts = [];
+
 document.addEventListener('DOMContentLoaded', function() {
     // Referenzen zu den Elementen
     const resumeBtn = document.querySelector('.resume-btn');
@@ -38,6 +41,18 @@ document.addEventListener('DOMContentLoaded', function() {
     resumeBtn.addEventListener('click', function(e) {
         e.preventDefault();
         
+        // Vor dem Öffnen alten Inhalt komplett löschen
+        if (pdfJsContainer) {
+            pdfJsContainer.innerHTML = '';
+            pdfJsContainer.removeAttribute('data-loaded');
+        }
+        
+        // Alle alten Timeouts löschen
+        if (window.paperShredTimeouts) {
+            window.paperShredTimeouts.forEach(timeout => clearTimeout(timeout));
+            window.paperShredTimeouts = [];
+        }
+        
         // Download-Button sofort ausblenden
         const downloadBtnElem = document.getElementById('download-resume');
         if (downloadBtnElem) {
@@ -73,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Wrapper für alle Seiten
             const pagesWrapper = document.createElement('div');
+            pagesWrapper.className = 'pages-wrapper';
             pagesWrapper.style.position = 'relative';
             pagesWrapper.style.width = '100%';
             pagesWrapper.style.maxHeight = '70vh';
@@ -134,16 +150,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 
                 // Nach 0.3 Sekunden: langsam unscharf werden
-                setTimeout(() => {
+                const timeout1 = setTimeout(() => {
                     pageImages.forEach(img => {
                         img.canvas.style.filter = 'blur(12px)';
                     });
                 }, 300);
+                window.paperShredTimeouts.push(timeout1);
                 
                 // Nach 1.8 Sekunden (0.3 + 1.5): Papierschnipsel-Zerfall
-                setTimeout(() => {
+                const timeout2 = setTimeout(() => {
                     startPaperShredEffect(pagesWrapper, pageImages, container);
                 }, 1800);
+                window.paperShredTimeouts.push(timeout2);
             });
             
         }).catch(function(error) {
@@ -160,26 +178,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Verschiedene gezackte Papierriss-Formen (echte Papierkanten)
         const paperShapes = [
-    'polygon(0% 0%, 100% 0%, 92% 12%, 100% 24%, 86% 36%, 100% 48%, 89% 60%, 100% 72%, 84% 84%, 100% 100%, 0% 100%, 8% 88%, 0% 76%, 14% 64%, 0% 52%, 11% 40%, 0% 28%, 16% 16%)',
-    'polygon(0% 0%, 100% 0%, 100% 18%, 82% 28%, 100% 38%, 86% 48%, 100% 58%, 80% 68%, 100% 78%, 78% 88%, 100% 100%, 0% 100%, 14% 86%, 0% 74%, 18% 62%, 0% 50%, 22% 38%, 0% 26%, 10% 14%)',
-    'polygon(0% 0%, 100% 0%, 95% 14%, 100% 28%, 90% 42%, 100% 56%, 88% 70%, 100% 84%, 86% 100%, 14% 100%, 0% 84%, 12% 70%, 0% 56%, 10% 42%, 0% 28%, 5% 14%)'
-];
-
-
-
-
-
-        
-       /* const paperShapes = [
-            'polygon(0% 3%, 5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 97%)',
-            'polygon(0% 8%, 12% 0%, 88% 0%, 100% 10%, 100% 90%, 88% 100%, 12% 100%, 0% 92%)',
-            'polygon(0% 0%, 100% 0%, 92% 100%, 8% 100%)',
-            'polygon(0% 5%, 10% 0%, 90% 0%, 100% 8%, 100% 92%, 90% 100%, 10% 100%, 0% 95%)',
-            'polygon(0% 12%, 18% 0%, 82% 0%, 100% 15%, 100% 85%, 82% 100%, 18% 100%, 0% 88%)',
-            'polygon(0% 0%, 85% 0%, 100% 20%, 100% 80%, 85% 100%, 15% 100%, 0% 80%, 0% 20%)',
-            'polygon(0% 7%, 7% 0%, 93% 0%, 100% 7%, 100% 93%, 93% 100%, 7% 100%, 0% 93%)',
-            'polygon(0% 0%, 100% 0%, 100% 85%, 90% 100%, 10% 100%, 0% 85%)'
-        ];*/
+            'polygon(0% 0%, 100% 0%, 92% 12%, 100% 24%, 86% 36%, 100% 48%, 89% 60%, 100% 72%, 84% 84%, 100% 100%, 0% 100%, 8% 88%, 0% 76%, 14% 64%, 0% 52%, 11% 40%, 0% 28%, 16% 16%)',
+            'polygon(0% 0%, 100% 0%, 100% 18%, 82% 28%, 100% 38%, 86% 48%, 100% 58%, 80% 68%, 100% 78%, 78% 88%, 100% 100%, 0% 100%, 14% 86%, 0% 74%, 18% 62%, 0% 50%, 22% 38%, 0% 26%, 10% 14%)',
+            'polygon(0% 0%, 100% 0%, 95% 14%, 100% 28%, 90% 42%, 100% 56%, 88% 70%, 100% 84%, 86% 100%, 14% 100%, 0% 84%, 12% 70%, 0% 56%, 10% 42%, 0% 28%, 5% 14%)'
+        ];
         
         pageImages.forEach((page, pageIndex) => {
             const canvas = page.canvas;
@@ -284,22 +286,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 // Animation starten: Schnipsel fliegen weg
-                setTimeout(() => {
+                const timeoutShredStart = setTimeout(() => {
                     shreds.forEach(({ shred, delay, distanceX, distanceY, flyRotation }) => {
-                        setTimeout(() => {
+                        const innerTimeout = setTimeout(() => {
                             shred.style.transform = `translate(${distanceX}px, ${distanceY}px) rotate(${flyRotation}deg)`;
                             shred.style.opacity = '0';
                         }, delay * 1000);
+                        window.paperShredTimeouts.push(innerTimeout);
                     });
                 }, 50);
+                window.paperShredTimeouts.push(timeoutShredStart);
                 
                 // Nach Animation: Container entfernen und Platzhalter anzeigen
-                setTimeout(() => {
+                const timeoutRemove = setTimeout(() => {
                     shredContainer.remove();
                     if (pageIndex === pageImages.length - 1) {
                         showPlaceholder(container);
                     }
                 }, 3500);
+                window.paperShredTimeouts.push(timeoutRemove);
             };
             
             img.src = imageData;
@@ -324,96 +329,49 @@ document.addEventListener('DOMContentLoaded', function() {
         const content = document.createElement('div');
         content.className = 'placeholder-content';
 
-
         content.innerHTML = `
-    <svg class="lock-icon" width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
-    </svg>
-    <h3>Zugriff eingeschränkt.</h3>
-    <p>Relevante Informationen werden kontextbasiert bereitgestellt.</p>
-`;
-        
-
-
-
-
-
-        
+            <svg class="lock-icon" width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+            </svg>
+            <h3>Zugriff eingeschränkt.</h3>
+            <p>Relevante Informationen werden kontextbasiert bereitgestellt.</p>
+        `;
         
         placeholder.appendChild(content);
         container.appendChild(placeholder);
         
-        // ========== GLITZER EFFEKT AUSKOMMENTIERT ==========
-        /*
-        // Glitzer-Effekt (nur ✨ in Cyan)
-        const glitzerContainer = document.createElement('div');
-        glitzerContainer.className = 'glitzer-container';
-        placeholder.appendChild(glitzerContainer);
+        // Glitzer-Effekt ist auskommentiert (bleibt so)
+    }
+    
+    // Modal schließen mit vollständiger Bereinigung
+    function closeModal() {
+        modal.classList.remove('show');
         
-        const glitzerShapes = ['✨'];
+        // 1. Alle Timeouts stoppen
+        if (window.paperShredTimeouts) {
+            window.paperShredTimeouts.forEach(timeout => clearTimeout(timeout));
+            window.paperShredTimeouts = [];
+        }
         
-        function createGlitzer() {
-            const glitzer = document.createElement('div');
-            const randomShape = glitzerShapes[Math.floor(Math.random() * glitzerShapes.length)];
-            const size = 14 + Math.random() * 18;
-            const posX = Math.random() * placeholder.offsetWidth;
-            const posY = Math.random() * placeholder.offsetHeight;
-            
-            glitzer.innerHTML = randomShape;
-            glitzer.style.position = 'absolute';
-            glitzer.style.left = posX + 'px';
-            glitzer.style.top = posY + 'px';
-            glitzer.style.fontSize = size + 'px';
-            glitzer.style.setProperty('color', '#00ffff', 'important');
-            glitzer.style.textShadow = `0 0 ${6 + Math.random() * 10}px rgba(0,255,255,0.9)`;
-            glitzer.style.opacity = '0';
-            glitzer.style.transition = 'opacity 0.3s ease';
-            glitzer.style.pointerEvents = 'none';
-            
-            glitzerContainer.appendChild(glitzer);
-            
-            setTimeout(() => {
-                glitzer.style.opacity = 0.5 + Math.random() * 0.5;
-                setTimeout(() => {
-                    glitzer.style.opacity = '0';
-                    setTimeout(() => {
-                        glitzer.remove();
-                    }, 300);
-                }, 400 + Math.random() * 600);
-            }, 50);
+        // 2. PDF.js Container komplett leeren
+        if (pdfJsContainer) {
+            pdfJsContainer.innerHTML = '';
+            pdfJsContainer.removeAttribute('data-loaded');
+        }
+        
+        // 3. Eventuelle Wrapper leeren (falls noch vorhanden)
+        const wrapper = document.querySelector('.pages-wrapper');
+        if (wrapper) {
+            wrapper.innerHTML = '';
         }
         
         setTimeout(() => {
-            let glitzerInterval = setInterval(() => {
-                if (placeholder.isConnected) {
-                    createGlitzer();
-                } else {
-                    clearInterval(glitzerInterval);
-                }
-            }, 350);
-        }, 100);
-        
-        const modalElement = document.getElementById('resume-modal');
-        let glitzerIntervalId = null;
-        
-        const closeModalHandler = function() {
-            if (glitzerIntervalId) {
-                clearInterval(glitzerIntervalId);
-            }
-        };
-        
-        const modalCloseBtn = document.querySelector('.close-modal');
-        if (modalCloseBtn) {
-            modalCloseBtn.addEventListener('click', closeModalHandler);
-        }
-        modalElement.addEventListener('click', function(e) {
-            if (e.target === modalElement) closeModalHandler();
-        });
-        */
-        // ========== ENDE AUSKOMMENTIERTER GLITZER ==========
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }, 300);
     }
     
-    // Modal schließen
+    // Event-Listener für Modal-Schließen
     closeBtn.addEventListener('click', closeModal);
     modal.addEventListener('click', function(e) {
         if (e.target === modal) closeModal();
@@ -421,14 +379,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
     });
-    
-    function closeModal() {
-        modal.classList.remove('show');
-        setTimeout(() => {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }, 300);
-    }
     
     // Download-Funktion (wird durch das Ausblenden des Buttons nicht mehr benötigt, aber bleibt für die Struktur)
     downloadBtn.addEventListener('click', function(e) {
