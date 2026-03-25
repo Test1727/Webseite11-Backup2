@@ -1347,6 +1347,10 @@ section {
     border-radius: 4px;
 }
 
+.contact-form .btn-primary {
+    display: none !important;
+}
+
 /* ===== SPEZIELLE FORM-ELEMENTE ===== */
 /* Für label[for="contact-message"] */
 label[for="contact-message"] {
