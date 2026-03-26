@@ -696,7 +696,7 @@ section {
 
 .skill-item {
     /*background-color: #ffffff;*/
-    background-color: #0a2463;
+    background-color: #0f2a4a;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -713,12 +713,14 @@ section {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 8px;
+   color: #ffffff;
 }
 
 .skill-name {
     font-size: 17px;
     font-weight: 600;
-    color: #333;
+    color: #ffffff;
+    /*color: #333;*/
 }
 
 .skill-percentage {
@@ -739,7 +741,8 @@ section {
 
 .progress-bar {
     height: 100%;
-    background-color: var(--secondary-color);
+   background-color: #00ffff;
+    /*background-color: var(--secondary-color);*/
     border-radius: 25px;
     width: 0;
     transition: width 1.5s ease-in-out;
