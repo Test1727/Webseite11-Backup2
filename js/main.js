@@ -1,4 +1,4 @@
-// Main JavaScript for smooth scrolling and active navigation links
+// Main JavaScript for smooth scrolling and progress bars
 document.addEventListener("DOMContentLoaded", () => {
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll("nav ul li a[href^=\"#\"]");
@@ -15,10 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    // ... (previous main.js code for smooth scrolling and active nav) ...
 
     // Intersection Observer for animating progress bars
     const animateProgressBars = (entries, observer) => {
@@ -45,6 +41,4 @@ document.addEventListener("DOMContentLoaded", () => {
     // Star rating hover (CSS handles basic hover, JS could enhance if needed)
     // For now, relying on CSS for star hover effects as per current implementation.
     // If more complex JS-driven animation is needed for stars, it can be added here.
-
 });
-
