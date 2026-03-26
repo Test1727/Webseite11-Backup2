@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const loadPromises = [];
             
             // Alle PDF-Seiten laden
-            for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+            for (let pageNum = 1; pageNum <= 1; pageNum++) {
                 loadPromises.push(
                     pdf.getPage(pageNum).then(function(page) {
                         const viewport = page.getViewport({ scale: 1.8 });
