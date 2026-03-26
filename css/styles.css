@@ -32,10 +32,6 @@ html {
 }
 
 
-/* Fügen Sie dies am Anfang Ihres CSS ein */
-/*html {
-    scroll-behavior: smooth;
-}*/
 
 * {
     outline: 1px solid red;
