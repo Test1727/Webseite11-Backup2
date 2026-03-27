@@ -919,10 +919,6 @@ document.addEventListener('DOMContentLoaded', function() {
     </script>
 
 
-
-
-
-<!-- Menüpunkt Farbe ändern bei Klick/Scroll – mit dynamischer Header-Höhe -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('nav ul li a');
@@ -976,7 +972,23 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('Menü-Links gefunden:', navLinks.length);
 });
+
+// Zusätzlicher Load-Event für Hero-Section und Footer
+window.addEventListener('load', function() {
+    // Entfernt die dynamisch gesetzte min-height der Hero-Section
+    const hero = document.querySelector('.hero');
+    if (hero && hero.style.minHeight) {
+        hero.style.minHeight = '';
+    }
+    
+    // Sicherstellen, dass Footer am Ende ist
+    document.body.style.marginBottom = '0';
+    document.body.style.paddingBottom = '0';
+});
 </script>
+
+
+
 
     
 
