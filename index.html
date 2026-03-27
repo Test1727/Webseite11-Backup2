@@ -1031,9 +1031,9 @@ function setHeroHeight() {
         const imageHeight = heroImage ? heroImage.offsetHeight : 0;
         
         // Puffer je nach Browser anpassen (Chrome/Edge brauchen weniger)
-        let buffer = 180;
+        let buffer = 220;
         if (isVHBuggy) {
-            buffer = 160; // Für Chrome, Edge
+            buffer = 200; // Für Chrome, Edge
         }
         const totalContentHeight = contentHeight + imageHeight + buffer;
         
