@@ -493,7 +493,7 @@
         position: absolute !important;
         top: 50% !important;
         left: 50% !important;
-        transform: translate(-50%, -50%) rotate(-90deg) scale(2.5) !important;
+        transform: translate(-50%, -50%) rotate(-90deg) scale(1.5) !important;
         width: auto !important;
         height: auto !important;
         max-width: none !important;
