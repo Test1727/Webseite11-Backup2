@@ -1,5 +1,4 @@
-@media (min-width: 769px) and (max-width: 992px), 
-(min-width: 993px) and (orientation: portrait) {
+@media (min-width: 769px) and (max-width: 992px) {
     
     /* === TYPOGRAPHIE - FLUID === */
 
@@ -471,6 +470,38 @@
     }
 }
 
+
+
+
+/* ========================================
+   GROSSE TABLETS IM HOCHFORMAT
+   ======================================== */
+@media (min-width: 993px) and (orientation: portrait) {
+    /* Layout wie bei Tablet */
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .hero-content {
+        order: 2;
+    }
+    
+    .hero-image {
+        order: 1;
+    }
+    
+    .profile-image {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .hero-brain {
+        opacity: 0.2;
+        left: -50%;
+    }
+}
 
 
 
