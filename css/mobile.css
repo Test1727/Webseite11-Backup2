@@ -480,33 +480,18 @@
    HOCHFORMAT FÜR TABLETS UND GROSSE GERÄTE
    ======================================== */
 @media (orientation: portrait) and (min-width: 769px) {
+    @media (orientation: portrait) and (min-width: 769px) {
     .hero {
+        background-color: #0f2a4a !important;
+        background-image: none !important;
         position: relative !important;
         overflow: hidden !important;
         min-height: 100vh !important;
-        background-color: transparent !important;
     }
     
-    /* Gehirn-Bild nur mit scale vergrößern */
     .hero-brain {
-    display: block !important;
-    position: absolute !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    transform: rotate(-20deg) scale(1.5) !important;
-    transform-origin: bottom left !important;
-    width: auto !important;
-    height: auto !important;
-    max-width: none !important;
-    object-fit: contain !important;
-    opacity: 0.6 !important;
-    z-index: 1 !important;
-    pointer-events: none !important;
-}
-
-
-
-    
+        display: none !important;
+    }
     
     .hero .container {
         position: relative !important;
@@ -534,6 +519,11 @@
         height: 220px !important;
     }
 }
+
+
+
+
+
 
 
 
