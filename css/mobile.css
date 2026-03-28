@@ -479,6 +479,7 @@
 /* ========================================
    HOCHFORMAT FÜR TABLETS UND GROSSE GERÄTE
    ======================================== */
+
 @media (orientation: portrait) and (min-width: 769px) {
     .hero {
         position: relative !important;
@@ -487,7 +488,7 @@
         background-color: transparent !important;
     }
     
-    /* Gehirn-Bild größer als Container, um zu füllen */
+    /* Gehirn-Bild größer machen, um weiße Ränder zu vermeiden */
     .hero-brain {
         display: block !important;
         position: absolute !important;
@@ -528,6 +529,10 @@
         height: 220px !important;
     }
 }
+
+
+
+
 
 
 
