@@ -479,14 +479,13 @@
 /* ========================================
    HOCHFORMAT FÜR TABLETS UND GROSSE GERÄTE
    ======================================== */
-    @media (orientation: portrait) and (min-width: 769px) {
-        @media (orientation: portrait) and (min-width: 769px) {
+@media (orientation: portrait) and (min-width: 769px) {
     .hero {
         background-color: #0f2a4a !important;
         background-image: none !important;
         position: relative !important;
         overflow: hidden !important;
-        height: 100dvh !important; /* Dynamische Viewport-Höhe */
+        height: 100dvh !important;
         min-height: 0 !important;
         display: flex !important;
         align-items: center !important;
@@ -506,7 +505,7 @@
         justify-content: center !important;
         text-align: center !important;
         width: 100% !important;
-        gap: 80px !important;
+        gap: 100px !important; /* Vergrößerter Abstand zwischen Bild und Text */
         padding: 0 20px !important;
     }
     
@@ -523,7 +522,43 @@
         width: 220px !important;
         height: 220px !important;
     }
+    
+    /* Abstand innerhalb des Textbereichs vergrößern */
+    .hero-content h1 {
+        margin-bottom: 20px !important;
+    }
+    
+    .hero-content h2 {
+        margin-bottom: 20px !important;
+    }
+    
+    .hero-content p {
+        margin-bottom: 30px !important;
+    }
+    
+    /* Buttons gleich breit machen */
+    .hero-buttons {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 20px !important;
+        width: 100% !important;
+        margin-top: 20px !important;
+    }
+    
+    .hero-buttons .btn {
+        flex: 1 !important;
+        max-width: 250px !important;
+        min-width: 180px !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+    }
 }
+
+
+
+
+ 
 
 
 
