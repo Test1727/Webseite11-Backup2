@@ -479,13 +479,14 @@
 /* ========================================
    HOCHFORMAT FÜR TABLETS UND GROSSE GERÄTE
    ======================================== */
-@media (orientation: portrait) and (min-width: 769px) {
+    @media (orientation: portrait) and (min-width: 769px) {
     .hero {
         background-color: #0f2a4a !important;
         background-image: none !important;
         position: relative !important;
         overflow: hidden !important;
-        min-height: 90vh !important; /* Höhe reduziert */
+        height: 100vh !important; /* Genau die Bildschirmhöhe */
+        min-height: 0 !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -504,7 +505,7 @@
         justify-content: center !important;
         text-align: center !important;
         width: 100% !important;
-        gap: 80px !important; /* Größerer Abstand zwischen Bild und Text */
+        gap: 80px !important;
         padding: 0 20px !important;
     }
     
@@ -522,6 +523,10 @@
         height: 220px !important;
     }
 }
+
+
+
+
 
 
 
