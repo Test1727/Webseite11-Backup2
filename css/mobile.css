@@ -481,33 +481,22 @@
    ======================================== */
     
                 
-@media (orientation: portrait) and (min-width: 769px) {
+    @media (orientation: portrait) and (min-width: 769px) {
     .hero {
         margin-top: -80px !important;
         background-color: transparent !important;
+        background-image: url('images/8%20color.svg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
         position: relative !important;
         overflow: hidden !important;
         min-height: 100vh !important;
     }
-
-
-
-    /* Gehirn-Bild füllt gesamten Bereich mit Versatz */
-.hero-brain {
-    display: block !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: -20% !important;
-    width: 140% !important; /* Größer, um den Versatz auszugleichen */
-    height: 100% !important;
-    transform: rotate(-90deg) !important;
-    object-fit: cover !important;
-    opacity: 0.6 !important;
-    z-index: 1 !important;
-    pointer-events: none !important;
-}
     
-
+    .hero-brain {
+        display: none !important; /* Versteckt das separate Bild */
+    }
     
     /* Container für Text und Profilbild */
     .hero .container {
@@ -535,6 +524,11 @@
         height: 220px !important;
     }
 }
+
+
+
+
+
 
 
 
