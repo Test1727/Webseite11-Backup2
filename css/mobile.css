@@ -503,7 +503,8 @@
         opacity: 0.6 !important;
         z-index: 1 !important;
         pointer-events: none !important;
-          transform: rotate(90deg) !important; 
+          transform: rotate(-90deg) !important; 
+        left: -20% !important;
     }
     
     /* Container für Text und Profilbild */
