@@ -471,13 +471,21 @@
 }
 
 
-
-
-/* ========================================
-   GROSSE TABLETS IM HOCHFORMAT
-   ======================================== */
+/* Große Tablets im Hochformat (ab 993px) */
 @media (min-width: 993px) and (orientation: portrait) {
-    /* Layout wie bei Tablet */
+    
+    .hero {
+        background-image: url('images/8%20color.svg');
+        background-size: cover;
+        background-position: center;
+        background-color: transparent;
+        overflow: hidden;
+    }
+    
+    .hero-brain {
+        display: none; /* Versteckt das separate Bild */
+    }
+    
     .hero .container {
         flex-direction: column;
         text-align: center;
@@ -496,12 +504,9 @@
         width: 220px;
         height: 220px;
     }
-    
-    .hero-brain {
-        opacity: 0.2;
-        left: -50%;
-    }
 }
+
+
 
 
 
