@@ -489,20 +489,21 @@
     
     /* Gehirn-Bild nur mit scale vergrößern */
     .hero-brain {
-        display: block !important;
-        position: absolute !important;
-        top: 50% !important;
-        left: 50% !important;
-        transform: translate(-50%, -50%) rotate(-45deg) scale(1.5) !important;
-        /*transform: translate(-50%, -50%) rotate(45deg) scale(1.5) !important;*/
-        width: auto !important;
-        height: auto !important;
-        max-width: none !important;
-        object-fit: contain !important;
-        opacity: 0.6 !important;
-        z-index: 1 !important;
-        pointer-events: none !important;
-    }
+    display: block !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    transform: rotate(-20deg) scale(1.5) !important;
+    transform-origin: bottom left !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    object-fit: contain !important;
+    opacity: 0.6 !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+
     
     .hero .container {
         position: relative !important;
