@@ -508,6 +508,17 @@
         padding: 4px 10px !important;
     }
 
+
+        
+    .language-selector select {
+        padding-right: 30px !important;
+        background-position: right 10px center !important;
+        background-size: 10px !important;
+        text-align: left !important;
+        text-align-last: left !important;
+    }
+
+
         .header-right {
     margin-left: 20px !important;
 }
