@@ -654,12 +654,23 @@
     /* === HERO SECTION === */
     .hero {
         padding-top: 70px !important;
-        min-height: 90vh !important;
+        min-height: auto !important;  /* Keine feste Display-Höhe mehr */
+        height: auto !important;
     }
     
     .hero .container {
+        flex-direction: column !important;
+        text-align: center !important;
         gap: 25px !important;
         padding-top: 0 !important;
+    }
+    
+    .hero-image {
+        order: 1 !important;
+    }
+    
+    .hero-content {
+        order: 2 !important;
     }
     
     .profile-image {
@@ -885,6 +896,8 @@
         font-size: 0.7rem !important;
     }
 }
+
+
 
 
 
