@@ -125,29 +125,6 @@
         white-space: nowrap !important;
     }
 
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
 
    .language-selector select {
@@ -167,11 +144,6 @@
     min-height: calc(100vh - 80px) !important;
     height: auto !important;
 }
-
-
-
-    
- 
 
 
       .hero .container {
@@ -815,23 +787,7 @@
         font-size: 0.8rem;
     }
 
-    /* Anwendungsadministratorin ein Wort */
 
-    .admin-split-container {
-        display: inline !important;
-        flex-direction: row !important;
-    }
-    
-    .admin-first-part,
-    .admin-second-part {
-        display: inline !important;
-    }
-    
-    .admin-first-part::after {
-        content: "" !important;
-    }
-
-    /* -------------------------------*/
     
     /* === SKILLS SECTION === */
     .skills-category h3 {
