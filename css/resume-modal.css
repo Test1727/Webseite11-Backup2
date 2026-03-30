@@ -290,27 +290,7 @@
     }    
 }
 
-/* Nur für extrem schmale Fenster */
-@media (max-width: 480px) {
-    #resume-modal .modal-content {
-        height: auto !important;
-        min-height: 90vh !important;
-        max-height: none !important;
-    }
-    
-    #pdfjs-container {
-        min-height: 550px;
-    }
-    
-    .pages-wrapper {
-        max-height: none !important;
-        min-height: 550px !important;
-    }
-    
-    .placeholder-container {
-        min-height: 550px !important;
-    }
-}
+
 
 
 
