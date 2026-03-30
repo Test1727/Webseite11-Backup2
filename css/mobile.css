@@ -1520,6 +1520,22 @@
 
 
 
+/* ======================================== */
+/* 6. DESKTOP & GROSSE BILDSCHIRME (>992px) */
+/* ======================================== */
+@media (min-width: 993px) {
+    
+    /* Dem Body oder Main einen Padding-Top geben */
+    main {
+        padding-top: 80px !important;
+    }
+    
+    /* Hero anpassen */
+    .hero {
+        margin-top: 0 !important;
+        min-height: calc(100vh - 80px) !important;
+    }
+}
 
 
 
