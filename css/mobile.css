@@ -1443,7 +1443,7 @@
         max-width: 55% !important;
         width: 100% !important;
         margin-top: 0 !important;
-        align-items: center !important;  
+        text-align: center !important;  
     }
     
     .hero-content h1 {
