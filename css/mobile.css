@@ -1503,17 +1503,18 @@
         width: 100% !important;
     }
 
+        .hero-buttons .btn {
+        width: 180px !important;
+        padding: 10px 20px !important;
+        font-size: 0.9rem !important;
+        text-align: center !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-height: 44px !important;
+        height: auto !important;
+    }
 
-.hero-buttons .btn {
-    width: 180px !important;
-    padding: 10px 20px !important;
-    font-size: 0.9rem !important;
-    text-align: center !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-}
-    
     
 }
 
