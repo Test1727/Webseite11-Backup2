@@ -91,11 +91,19 @@
 }
     
     /* === HERO SECTION === */
-       .hero {
+       /*.hero {
         background-color: #112c4b !important;
         width: 100% !important;
-        }
+        }*/
+
     
+    .hero {
+    background-color: #112c4b !important;
+    width: 100% !important;
+    margin-top: 80px !important;
+    min-height: calc(100vh - 80px) !important;
+    height: auto !important;
+}
 
       .hero .container {
         width: 100% !important;
@@ -1521,7 +1529,7 @@
 
 
 /* ======================================== */
-/* 6. DESKTOP & GROSSE BILDSCHIRME (>992px) */
+/* 6. DESKTOP & GROSSE BILDSCHIRME (>992px) so wird hero mittig verkleinert*/
 /* ======================================== */
 @media (min-width: 993px) {
     
