@@ -1537,8 +1537,8 @@
     
     /* Hero mit Abstand zum fixierten Header */
     .hero {
-        margin-top: 200px !important;
-        min-height: calc(100vh - 200px) !important;
+        margin-top: 80px !important;
+        min-height: calc(120vh - 80px) !important;
     }
     
     /* Hauptinhalt nicht unter Header */
