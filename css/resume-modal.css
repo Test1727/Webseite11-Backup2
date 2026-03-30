@@ -290,12 +290,16 @@
     }    
 }
 
-@media (orientation: portrait) and (max-width: 600px) {
+
+/* Wenn Höhe mehr als doppelt so groß wie Breite */
+@media (max-aspect-ratio: 1/2) {
     .modal-content {
         max-height: none !important;
         height: auto !important;
     }
 }
+
+
 
 
 
