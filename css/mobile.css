@@ -1421,7 +1421,7 @@
     display: flex !important;
     gap: 6px !important;
     flex-shrink: 0 !important;
-    margin-left: 15px !important;  /* Mindestabstand zum letzten Menüpunkt */
+    margin-left: 25px !important;  /* Mindestabstand zum letzten Menüpunkt */
 }
 
 
