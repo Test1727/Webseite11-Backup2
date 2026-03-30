@@ -60,19 +60,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         modal.style.display = 'flex';
-
-// Nach modal.style.display = 'flex'; einfügen:
-if (window.innerWidth <= 768) {
-    const modalContent = document.querySelector('#resume-modal .modal-content');
-    if (modalContent) {
-        modalContent.style.minHeight = '80vh';
-        modalContent.style.height = 'auto';
-    }
-}
-
-
-
-        
         document.body.style.overflow = 'hidden';
         
         const currentLang = document.documentElement.getAttribute('lang') || 'de';
@@ -104,19 +91,7 @@ if (window.innerWidth <= 768) {
             pagesWrapper.className = 'pages-wrapper';
             pagesWrapper.style.position = 'relative';
             pagesWrapper.style.width = '100%';
-
-            // Speziell für schmale Fenster
-if (window.innerWidth <= 768) {
-    pagesWrapper.style.maxHeight = 'none';
-    pagesWrapper.style.minHeight = '550px';
-} else {
-    pagesWrapper.style.maxHeight = '70vh';
-    pagesWrapper.style.minHeight = '400px';
-}
-
-
-
-            
+            pagesWrapper.style.maxHeight = '70vh';            
             pagesWrapper.style.overflowY = 'auto';
             pagesWrapper.style.overflowX = 'hidden';
             pagesWrapper.style.borderRadius = '8px';
