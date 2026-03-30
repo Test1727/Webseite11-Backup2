@@ -519,176 +519,6 @@
 
 
 
-/* ======================================== */
-/* 3. TABLET-HOCHFORMAT & GROSSE HOCHFORMATE */
-/* ======================================== */
-    /* Greift bei:
-       - Alle Geräte mit Breite >= 769px
-       - UND Hochformat (Höhe > Breite)
-       - Typische Beispiele: iPad im Hochformat, große Tablets, Desktop-Monitore im Hochformat
-       - Achtung: Erfasst auch große Desktop-Monitore im Hochformat!
-    */
-/* ======================================== */
-@media (orientation: portrait) and (min-width: 769px) {
-        /* Header/Menü - KEINE SCROLLBAR */
-    header .container {
-        width: 100% !important;
-        max-width: 100% !important;
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        flex-wrap: nowrap !important;
-        gap: 0.5vw !important;
-        padding: 0 15px !important;
-    }
-    
-    .logo {
-        font-size: 1.4rem !important;
-        flex-shrink: 0 !important;
-    }
-    
-    nav {
-        margin: 0 5px !important;
-        flex: 1 !important;
-        min-width: 0 !important;  /* Erlaubt Schrumpfen */
-        overflow: visible !important;
-    }
-    
-    nav ul {
-        display: flex !important;
-        justify-content: flex-start !important;
-        gap: 4px !important;
-        flex-wrap: nowrap !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    nav ul li a {
-        font-size: 0.8rem !important;
-        padding: 4px 6px !important;
-        white-space: nowrap !important;
-    }
-    
-    .header-right {
-        display: flex !important;
-        gap: 6px !important;
-        flex-shrink: 0 !important;
-         margin-left: 25px !important;
-    }
-    
-    .language-selector select,
-    .resume-btn {
-        height: 26px !important;
-        font-size: 0.6rem !important;
-        padding: 2px 6px !important;
-        white-space: nowrap !important;
-    }
-    
-    .language-selector select {
-        padding-right: 20px !important;
-        background-position: right 4px center !important;
-    }
-
-
-
-
-    /* ===== HERO SECTION bleibt unverändert ===== */
-    .hero {
-        min-height: 100vh !important;
-        padding: 80px 0 !important;
-        background: #0f2a4a !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-    
-    .hero-brain {
-        display: block !important;
-        position: absolute !important;
-        top: 50% !important;
-        left: -50% !important;
-        width: 200% !important;
-        height: auto !important;
-        transform: translateY(-50%) rotate(-90deg) !important;
-        opacity: 0.25 !important;
-        z-index: 1 !important;
-        pointer-events: none !important;
-    }
-    
-    .hero .container {
-        position: relative !important;
-        z-index: 3 !important;
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        text-align: left !important;
-        width: 100% !important;
-        max-width: 1100px !important;
-        gap: 50px !important;
-        padding: 0 40px !important;
-    }
-    
-    .hero-content {
-        order: 1 !important;
-        max-width: 55% !important;
-        width: 100% !important;
-        margin-top: 0 !important;
-        text-align: center !important;
-    }
-    
-    .hero-content h1 {
-        font-size: 2.5rem !important;
-        margin-bottom: 0.5rem !important;
-    }
-    
-    .hero-content h2 {
-        font-size: 1.4rem !important;
-        margin-bottom: 1rem !important;
-    }
-    
-    .hero-content p {
-        font-size: 1rem !important;
-        margin-bottom: 2.5rem !important;
-    }
-    
-    .hero-image {
-        order: 2 !important;
-        margin-top: 0 !important;
-        flex-shrink: 0 !important;
-    }
-    
-    .profile-image {
-        width: 260px !important;
-        height: 260px !important;
-        margin-top: 0 !important;
-        border-width: 3px !important;
-    }
-    
-    .hero-buttons {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: center !important;
-        gap: 15px !important;
-        margin-top: 30px !important;
-        width: 100% !important;
-    }
-
-        .hero-buttons .btn {
-        width: 180px !important;
-        padding: 10px 20px !important;
-        font-size: 0.9rem !important;
-        text-align: center !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        min-height: 44px !important;
-        height: auto !important;
-    }
-
-    
-}
-
 
 
 
@@ -1552,6 +1382,176 @@
 }
 
 
+
+/* ======================================== */
+/* 3. TABLET-HOCHFORMAT & GROSSE HOCHFORMATE */
+/* ======================================== */
+    /* Greift bei:
+       - Alle Geräte mit Breite >= 769px
+       - UND Hochformat (Höhe > Breite)
+       - Typische Beispiele: iPad im Hochformat, große Tablets, Desktop-Monitore im Hochformat
+       - Achtung: Erfasst auch große Desktop-Monitore im Hochformat!
+    */
+/* ======================================== */
+@media (orientation: portrait) and (min-width: 769px) {
+        /* Header/Menü - KEINE SCROLLBAR */
+    header .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        flex-wrap: nowrap !important;
+        gap: 0.5vw !important;
+        padding: 0 15px !important;
+    }
+    
+    .logo {
+        font-size: 1.4rem !important;
+        flex-shrink: 0 !important;
+    }
+    
+    nav {
+        margin: 0 5px !important;
+        flex: 1 !important;
+        min-width: 0 !important;  /* Erlaubt Schrumpfen */
+        overflow: visible !important;
+    }
+    
+    nav ul {
+        display: flex !important;
+        justify-content: flex-start !important;
+        gap: 4px !important;
+        flex-wrap: nowrap !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    nav ul li a {
+        font-size: 0.8rem !important;
+        padding: 4px 6px !important;
+        white-space: nowrap !important;
+    }
+    
+    .header-right {
+        display: flex !important;
+        gap: 6px !important;
+        flex-shrink: 0 !important;
+         margin-left: 25px !important;
+    }
+    
+    .language-selector select,
+    .resume-btn {
+        height: 26px !important;
+        font-size: 0.6rem !important;
+        padding: 2px 6px !important;
+        white-space: nowrap !important;
+    }
+    
+    .language-selector select {
+        padding-right: 20px !important;
+        background-position: right 4px center !important;
+    }
+
+
+
+
+    /* ===== HERO SECTION bleibt unverändert ===== */
+    .hero {
+        min-height: 100vh !important;
+        padding: 80px 0 !important;
+        background: #0f2a4a !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .hero-brain {
+        display: block !important;
+        position: absolute !important;
+        top: 50% !important;
+        left: -50% !important;
+        width: 200% !important;
+        height: auto !important;
+        transform: translateY(-50%) rotate(-90deg) !important;
+        opacity: 0.25 !important;
+        z-index: 1 !important;
+        pointer-events: none !important;
+    }
+    
+    .hero .container {
+        position: relative !important;
+        z-index: 3 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        text-align: left !important;
+        width: 100% !important;
+        max-width: 1100px !important;
+        gap: 50px !important;
+        padding: 0 40px !important;
+    }
+    
+    .hero-content {
+        order: 1 !important;
+        max-width: 55% !important;
+        width: 100% !important;
+        margin-top: 0 !important;
+        text-align: center !important;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.4rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .hero-content p {
+        font-size: 1rem !important;
+        margin-bottom: 2.5rem !important;
+    }
+    
+    .hero-image {
+        order: 2 !important;
+        margin-top: 0 !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .profile-image {
+        width: 260px !important;
+        height: 260px !important;
+        margin-top: 0 !important;
+        border-width: 3px !important;
+    }
+    
+    .hero-buttons {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        margin-top: 30px !important;
+        width: 100% !important;
+    }
+
+        .hero-buttons .btn {
+        width: 180px !important;
+        padding: 10px 20px !important;
+        font-size: 0.9rem !important;
+        text-align: center !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-height: 44px !important;
+        height: auto !important;
+    }
+
+    
+}
 
 
 
