@@ -855,8 +855,8 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;           /* ← von 52 auf 56 erhöht */
-    height: 60px;          /* ← von 52 auf 56 erhöht */
+    width: 64px;          /* ← von 52 auf 56 erhöht */
+    height: 64px;        /* ← von 52 auf 56 erhöht */
     flex-shrink: 0;
 }
 
