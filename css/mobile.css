@@ -125,7 +125,7 @@
     background-color: #112c4b !important;
     width: 100% !important;
     margin-top: 80px !important;
-    min-height: calc(100vh - 80px) !important;
+    min-height: calc(100vh - 70px) !important;
     height: auto !important;
 }
 
