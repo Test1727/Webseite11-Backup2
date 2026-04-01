@@ -306,7 +306,7 @@ section {
     z-index: 3;
     display: flex;
     justify-content: space-between;
-   flex-direction: row;  /* ← HIER HINZUFÜGEN */
+   flex-direction: row;
     align-items: center;
 }
 
@@ -362,9 +362,6 @@ section {
         white-space: nowrap;
         cursor: pointer;
     }
-
-
-
 
 
 .hero-buttons .btn-primary,
@@ -1559,7 +1556,6 @@ footer {
     text-align: center;
     padding: 2rem 0;
     margin-top: 0;
-     /*flex-shrink: 0; /* bleibt unten, wird nicht gestaucht */*/
 }
 
 footer p {
