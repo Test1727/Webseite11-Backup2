@@ -626,20 +626,11 @@
     }
     
     /* === HERO SECTION === */
-    /*.hero {
+    .hero {
         padding-top: 70px !important;
         min-height: auto !important;  /* Keine feste Display-Höhe mehr */
         height: auto !important;
-    }*/
-
-        .hero {
-        padding-top: 70px !important;
-        padding-bottom: 40px !important;
-        min-height: 100svh !important;  /* ← svh statt vh */
-        height: auto !important;
     }
-
-
 
     
     .hero .container {
