@@ -847,17 +847,11 @@ section {
             align-items: center;
             gap: 15px;
             padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.9);
             border-radius: 16px;
             transition: all 0.3s ease;
-            border: 1px solid rgba(0, 255, 255, 0.2);
         }
         
-        .soft-skill-item:hover {
-            transform: translateY(-3px);
-            border-color: #00ffff;
-            box-shadow: 0 8px 20px rgba(0, 255, 255, 0.1);
-        }
+   
         
         .soft-skill-icon {
             display: flex;
@@ -877,11 +871,7 @@ section {
             transition: all 0.3s ease;
         }
         
-        .soft-skill-item:hover .soft-skill-icon svg {
-            stroke: #ff8c42;
-            transform: scale(1.05);
-        }
-        
+     
         .soft-skill-name {
             font-size: 1rem;
             font-weight: 500;
