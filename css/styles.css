@@ -850,7 +850,7 @@ section {
 .soft-skills {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 15px;
+    gap: 10px;
 }
 
 
