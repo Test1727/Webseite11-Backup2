@@ -842,51 +842,50 @@ section {
 }*/
 
 
-     .soft-skill-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px 20px;
-            border-radius: 16px;
-            transition: all 0.3s ease;
-        }
-        
-   
-        
-        .soft-skill-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 52px;
-            height: 52px;
-            flex-shrink: 0;
-        }
-        
-        .soft-skill-icon svg {
-            width: 100%;
-            height: 100%;
-            stroke: #00ffff;
-            /*stroke: #3e92cc; */
-            stroke-width: 1.5;
-            fill: none;
-            transition: all 0.3s ease;
-        }
-        
-     
-        .soft-skill-name {
-            font-size: 1rem;
-            font-weight: 500;
-            color: #0a2463;
-        }
-        
-        /* Grid-Layout für Soft Skills */
-        .soft-skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
+.soft-skill-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
 
+.soft-skill-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;           /* ← von 52 auf 56 erhöht */
+    height: 56px;          /* ← von 52 auf 56 erhöht */
+    flex-shrink: 0;
+}
+
+.soft-skill-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;    /* ← NEU: sorgt für einheitliche Skalierung */
+    transition: all 0.3s ease;
+}
+
+/* Hover-Effekt für SVGs */
+.soft-skill-item:hover .soft-skill-icon svg {
+    transform: scale(1.05);
+}
+
+.soft-skill-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #0a2463;
+}
+
+/* Grid-Layout für Soft Skills */
+.soft-skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
 
 
 
