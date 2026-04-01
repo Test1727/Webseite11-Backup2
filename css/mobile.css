@@ -126,7 +126,7 @@
     width: 100% !important;
    /* margin-top: 80px !important;*/
     /*min-height: calc(100vh - 80px) !important;*/
-        padding-top: 120px !important;  /* ← padding-top stattdessen */
+        padding-top: 80px !important;  /* ← padding-top stattdessen */
     min-height: 100vh !important;  /* ← volle Höhe */
     height: auto !important;
           display: flex !important;
