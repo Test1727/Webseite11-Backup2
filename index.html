@@ -1071,6 +1071,51 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     </script>   
+
+
+        // Debug-Info für Media Queries - ERWEITERT
+<script>
+(function() {
+    var debugBox = document.createElement('div');
+    debugBox.style.cssText = 'position: fixed; bottom: 10px; left: 10px; background: rgba(0,0,0,0.85); color: #0f0; font-family: monospace; font-size: 11px; padding: 6px 10px; border-radius: 5px; z-index: 9999; pointer-events: none; line-height: 1.4;';
+    document.body.appendChild(debugBox);
+    
+    function updateDebug() {
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+        var orientation = window.innerHeight > window.innerWidth ? 'HOCHFORMAT' : 'QUERFORMAT';
+        var activeQuery = '';
+        
+        // Priorität: spezifischere zuerst
+        if (width >= 769 && width <= 992 && orientation === 'QUERFORMAT') {
+            activeQuery = '📟 TABLET-QUERFORMAT (769-992px)';
+        }
+        else if (width >= 769 && width <= 992 && orientation === 'HOCHFORMAT') {
+            activeQuery = '📟 TABLET-HOCHFORMAT (769-992px)';
+        }
+        else if (width > 992 && orientation === 'HOCHFORMAT') {
+            activeQuery = '💻 DESKTOP-HOCHFORMAT (>992px)';
+        }
+        else if (width > 992 && orientation === 'QUERFORMAT') {
+            activeQuery = '💻 DESKTOP-QUERFORMAT (>992px)';
+        }
+        else if (width <= 768 && orientation === 'QUERFORMAT') {
+            activeQuery = '📱 SMARTPHONE-QUERFORMAT (≤768px)';
+        }
+        else if (width <= 768 && orientation === 'HOCHFORMAT') {
+            activeQuery = '📱 SMARTPHONE-HOCHFORMAT (≤768px)';
+        }
+        else {
+            activeQuery = '❓ UNBEKANNT';
+        }
+        
+        debugBox.innerHTML = '📐 ' + width + 'px × ' + height + 'px<br>' + activeQuery;
+    }
+    
+    window.addEventListener('resize', updateDebug);
+    updateDebug();
+})();
+</script>
     
 </body>
 </html>
