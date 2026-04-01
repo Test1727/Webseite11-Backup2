@@ -124,9 +124,14 @@
     .hero {
     background-color: #112c4b !important;
     width: 100% !important;
-    margin-top: 80px !important;
-    min-height: calc(100vh - 100px) !important;
+   /* margin-top: 80px !important;*/
+    /*min-height: calc(100vh - 80px) !important;*/
+        padding-top: 80px !important;  /* ← padding-top stattdessen */
+    min-height: 100vh !important;  /* ← volle Höhe */
     height: auto !important;
+          display: flex !important;
+    align-items: center !important;  
+          justify-content: center !important;
 }
 
 
