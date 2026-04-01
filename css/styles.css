@@ -404,7 +404,7 @@ section {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background-image: url('images/profile.png');
+    background-image: url('../images/profile.png');
     background-size: cover;        /* ← FEHLT: Skaliert das Bild richtig */
     background-position: center;   /* ← FEHLT: Zentriert das Bild */
     /*object-fit: cover;*/
