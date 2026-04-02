@@ -279,8 +279,8 @@ section {
     background: #0f2a4a;
     position: relative;
     overflow: hidden;
-  <!--  padding-top: 0 !important; -->
-   <!-- margin-top: 0 !important; -->
+    /* padding-top: 0 !important; */
+    /* margin-top: 0 !important; */
 }
 
 @keyframes rightPulse {
