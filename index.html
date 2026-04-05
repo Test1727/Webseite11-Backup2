@@ -53,26 +53,7 @@
                 <div class="hero-content">
                     <h1>Astrid Kraft</h1>
                     <h2 data-i18n="hero_title">IT-Spezialistin & KI-Expertin</h2>
-                  <!--  <p data-i18n="hero_subtitle">Innovative Lösungen für eine digitale Zukunft</p> -->
-
-
-                    <p data-i18n="hero_subtitle" id="videoTrigger" style="cursor: pointer;">🎥 Innovative Lösungen für eine digitale Zukunft</p>
-
-<!-- Video Container (zuerst unsichtbar) -->
-<div id="videoContainer" style="display: none; margin: 20px 0;">
-    <video id="heroVideo" width="100%" controls style="max-width: 800px; border-radius: 8px;">
-        <source src="images/_users_bd3aa812-1621-4c99-9904-5b4a1b5815de_generated_864f4bed-2a43-406c-a9f5-10e3c4b3bda8_generated_video.mp4" type="video/mp4">
-        Ihr Browser unterstützt kein HTML5-Video.
-    </video>
-    <button id="closeVideoBtn" style="display: block; margin-top: 10px; padding: 5px 15px; background: #ff8c42; color: white; border: none; border-radius: 5px; cursor: pointer;">Schließen ✖</button>
-</div>
-
-                    
-
-
-
-
-
+                    <p data-i18n="hero_subtitle">Innovative Lösungen für eine digitale Zukunft</p> 
                     
                     <div class="hero-buttons">
                         <a href="index.html#contact" class="btn btn-primary" data-i18n="hero_contact_btn">Kontakt aufnehmen</a>
@@ -1074,39 +1055,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     </script>   
 
-
-
-
-    
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const trigger = document.getElementById('videoTrigger');
-    const container = document.getElementById('videoContainer');
-    const video = document.getElementById('heroVideo');
-    const closeBtn = document.getElementById('closeVideoBtn');
-
-    // Beim Klick auf den Text
-    trigger.onclick = function() {
-        if (container.style.display === 'none') {
-            container.style.display = 'block';  // Video anzeigen
-            video.play();                       // Starten
-            video.loop = false;                 // Nur 1x abspielen
-        } else {
-            // Falls schon offen: Schließen (optional)
-            video.pause();
-            video.currentTime = 0;
-            container.style.display = 'none';
-        }
-    };
-
-    // Beim Klick auf den Schließen-Button
-    closeBtn.onclick = function() {
-        video.pause();          // Stoppen
-        video.currentTime = 0;  // Zurückspulen
-        container.style.display = 'none';
-    };
-});
-</script>
 
 
     
