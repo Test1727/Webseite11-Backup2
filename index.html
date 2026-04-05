@@ -53,7 +53,27 @@
                 <div class="hero-content">
                     <h1>Astrid Kraft</h1>
                     <h2 data-i18n="hero_title">IT-Spezialistin & KI-Expertin</h2>
-                    <p data-i18n="hero_subtitle">Innovative Lösungen für eine digitale Zukunft</p>
+                  <!--  <p data-i18n="hero_subtitle">Innovative Lösungen für eine digitale Zukunft</p> -->
+
+
+                    <p data-i18n="hero_subtitle" id="videoTrigger" style="cursor: pointer;">🎥 Innovative Lösungen für eine digitale Zukunft</p>
+
+<!-- Video Container (zuerst unsichtbar) -->
+<div id="videoContainer" style="display: none; margin: 20px 0;">
+    <video id="heroVideo" width="100%" controls style="max-width: 800px; border-radius: 8px;">
+        <source src="DEIN_VIDEO_NAME.mp4" type="video/mp4">
+        Ihr Browser unterstützt kein HTML5-Video.
+    </video>
+    <button id="closeVideoBtn" style="display: block; margin-top: 10px; padding: 5px 15px; background: #ff8c42; color: white; border: none; border-radius: 5px; cursor: pointer;">Schließen ✖</button>
+</div>
+
+                    
+
+
+
+
+
+                    
                     <div class="hero-buttons">
                         <a href="index.html#contact" class="btn btn-primary" data-i18n="hero_contact_btn">Kontakt aufnehmen</a>
                         <a href="index.html#projects" class="btn btn-secondary" data-i18n="hero_projects_btn">Meine Projekte</a>
