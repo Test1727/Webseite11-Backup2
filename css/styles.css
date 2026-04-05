@@ -433,6 +433,45 @@ section {
 
 
 
+
+
+#videoTrigger {
+    cursor: pointer;
+    transition: color 0.3s;
+    display: inline-block;
+}
+
+#videoTrigger:hover {
+    color: #00ffff;
+}
+
+#videoContainer {
+    margin: 20px 0;
+    text-align: center;
+}
+
+#heroVideo {
+    max-width: 100%;
+    height: auto;
+}
+
+#closeVideoBtn {
+    background: #ff8c42;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+#closeVideoBtn:hover {
+    background: #e67e22;
+}
+
+
+
 /* ========================================
    ABOUT SECTION
    ======================================== */
