@@ -477,6 +477,16 @@ section {
     display: inline-block;
 }
 
+.modal-headline {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    font-size: 1.4rem;
+    font-weight: normal;
+    letter-spacing: 4px;
+    font-family: inherit;
+}
+
 
 
 
