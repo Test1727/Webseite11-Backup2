@@ -444,6 +444,7 @@ section {
     height: 100%;
     background-color: #0f2a4a;
     animation: fadeIn 0.3s;
+    z-index: 999999;
 }
 
 .video-modal-content {
