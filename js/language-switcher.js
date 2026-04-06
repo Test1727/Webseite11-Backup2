@@ -18,7 +18,7 @@ const translations = {
         
         // Hero-Sektion
         "hero_title": "IT-Spezialistin & KI-Expertin",
-        "hero_subtitle": "Innovative Lösungen für eine digitale Zukunft",
+        "hero_subtitle": "🎥 Innovative Lösungen für eine digitale Zukunft",
         "hero_contact_btn": "Kontakt aufnehmen",
         "hero_projects_btn": "Meine Projekte",
         "hero_brain_alt": "Digitales Gehirn",
@@ -305,7 +305,7 @@ const translations = {
         
         // Hero-Sektion
         "hero_title": "IT Specialist & AI Expert",
-        "hero_subtitle": "Innovative Solutions for a Digital Future",
+        "hero_subtitle": "🎥 Innovative solutions for a digital future",
         "hero_contact_btn": "Contact Me",
         "hero_projects_btn": "My Projects",
         "hero_brain_alt": "Digital Brain",
