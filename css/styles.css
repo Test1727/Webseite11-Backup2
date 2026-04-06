@@ -478,16 +478,7 @@ section {
 }
 
 
-/* Modal-Überschrift */
-.modal-headline {
-    text-align: center;
-    color: white;
-    margin-bottom: 40px;
-    font-size: 1.4rem;
-    font-weight: 500;  /* Normal, nicht fett */
-    letter-spacing: 4px;
-    font-family: inherit;
-}
+
 
 
 
