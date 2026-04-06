@@ -438,7 +438,6 @@ section {
 .video-modal {
     display: none;
     position: fixed;
-    z-index: 999999;
     left: 0;
     top: 0;
     width: 100%;
@@ -483,10 +482,14 @@ section {
     color: white;
     margin-bottom: 40px;
     font-size: 1.4rem;
-    font-weight: bold;
+    font-weight: 500;  /* Normal, nicht fett */
     letter-spacing: 4px;
-    font-family: 'DM Sans', 'Montserrat', 'Roboto', sans-serif;
+    font-family: inherit;
 }
+
+
+
+
 
 
 
