@@ -478,14 +478,19 @@ section {
 }
 
 
-/* Responsive Modal-Anpassungen */
+
+
+/* Überschrift */
 .modal-headline {
-    font-size: clamp(1rem, 4vw, 1.4rem);
-    margin-bottom: clamp(25px, 5vw, 50px);
-    letter-spacing: clamp(2px, 1vw, 4px);
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.5);
+    margin-bottom: 50px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 4px;
+    font-family: inherit;
 }
-
-
 
 
 
