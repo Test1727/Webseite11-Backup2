@@ -23,6 +23,9 @@ const translations = {
         "hero_projects_btn": "Meine Projekte",
         "hero_brain_alt": "Digitales Gehirn",
         "profile_alt": "Astrid Kraft Profilbild",
+        "modal_headline": ". . . in 5 Sekunden",
+        "video_fallback": "Ihr Browser unterstützt kein HTML5-Video.",
+
         
         // Über mich-Sektion
         "about_intro": "Langjährige IT-Erfahrung trifft auf mathematische Systemanalyse im Kontext moderner Künstlicher Intelligenz.",
@@ -310,6 +313,9 @@ const translations = {
         "hero_projects_btn": "My Projects",
         "hero_brain_alt": "Digital Brain",
         "profile_alt": "Astrid Kraft Profile Picture",
+        "modal_headline": ". . . in 5 seconds",
+        "video_fallback": "Your browser does not support HTML5 video.",
+        
         
         // Über mich-Sektion
         "about_intro": "Long-term IT experience meets mathematical system analysis in the context of modern artificial intelligence.",
